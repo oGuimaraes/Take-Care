@@ -6,10 +6,28 @@ Fontes
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
+.box-shadow() {
+    -webkit-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+.input-style() {
+    font-family: Poppins;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #666666;
+    height: 32px;
+    border: none;
+    border-radius: 25px;
+    padding: 0 15px 0 30px;
+    margin-top: 10px;  
+}
 
 * {
     box-sizing: border-box;
-
+    margin: 0 auto;
 }
 
 p {
@@ -41,6 +59,7 @@ p {
         h1 {
             font-size: 60px;
             margin-top: 20px;
+            margin-bottom: 12px;
         }
 
     }
@@ -52,19 +71,13 @@ p {
         justify-content: space-between;
 
         input {
-            font-family: Poppins;
-            font-weight: 500;
-            font-size: 15px;
-            line-height: 1.5;
-            color: #666666;
+
             display: block;
-            width: 80%;
             background: #e6e6e6;
-            height: 35px;
-            border: none;
-            border-radius: 25px;
-            padding: 0 15px 0 30px;
-            margin-top: 10px;
+            width: 80%;
+            .box-shadow;
+            .input-style;
+
         }
 
         button {
@@ -82,6 +95,7 @@ p {
             display: flex;
             justify-content: center;
             margin-top: 10px;
+            .box-shadow;
         }
     }
 }
@@ -91,19 +105,53 @@ p {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: #e2e2e2;
+    background-color: #f0f0f0;
     padding: 20px 120px;
-    
-    .campanha-box{
-        background-color: #fff;
-        border-radius: 10px;
-        margin: 20px 30px;
-        height: 400px;
-        width: 300px;
 
-        -webkit-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.1);
-        -moz-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.1);
-        box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.1);
+    .header-campanha{
+        
+        text-align: center;
+        width: 100%;
+
+        input{
+            width: 260px;
+            .input-style;
+            .box-shadow;
+        }
+
+        select{
+            margin-left: 130px;
+            .input-style;
+            padding-left: 16px;
+            padding-right: 8px;
+        }
+    }
+
+    .campanha-box{
+
+        font-family: Montserrat, sans-serif;
+        font-color: #3b3b3b;
+        background-color: #fff;
+        border: #a3a3a3 1px solid;
+        border-radius: 10px;
+        margin: 20px 20px;
+        height: auto;
+        width: 280px;
+        .box-shadow;
+
+        .imagem {
+            width: 100%;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            border-color: black;
+        }
+
+        .descricao {
+            padding: 15px;
+            h5 {
+                font-weight: 300;
+            }
+        }
     }
 }
 
