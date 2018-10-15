@@ -1,26 +1,21 @@
-var ongs = 
-{
+var ongs = {
     "results":
     [
         {
             "info":{
-                "tipo": "Criança",
-                "nome-campanha": "Ajude a Ong Criança Feliz",
-                "email": "contato@criancafeliz.org",
+                "tipo": "criança",
+                "nome-campanha": "Ajude a Casa Anjo Voluntario",
+                "email": "contato@anjovoluntario.org",
                 "desc-pequena": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et sapien nec augue auctor varius. Nam rhoncus urna a convallis rhoncus. Nullam lobortis dui eu ex ornare, at tincidunt augue blandit. In ut molestie justo, quis posuere velit. Aliquam sed metus malesuada, molestie dui sed, dignissim mauris.",
                 "desc-grande": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et sapien nec augue auctor varius. Nam rhoncus urna a convallis rhoncus. Nullam lobortis dui eu ex ornare, at tincidunt augue blandit. In ut molestie justo, quis posuere velit. Aliquam sed metus malesuada, molestie dui sed, dignissim mauris. Etiam vel odio scelerisque, vestibulum lorem at, bibendum erat. Sed sed orci vehicula, dictum sem ac, porta velit. Vestibulum aliquam neque ut nisi posuere, at varius nulla posuere. Nulla tempus, mi quis mollis tempus, mauris nulla accumsan nibh, porta bibendum dolor eros non mi. Nam semper leo metus, vitae porta lorem varius sed. Pellentesque pharetra scelerisque venenatis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla facilisi. Praesent ac ultricies velit. Curabitur ac tortor felis. Fusce lobortis sem nisi, quis malesuada lorem scelerisque sit amet." 
             },
             "localizacao": {
-                "rua": "claudio manuel costa",
+                "rua": "Claudio Manuel Costa",
                 "numero": 321,
-                "bairro": "savassi",
-                "cidade": "sobral",
-                "estado": "paranÃ¡",
+                "bairro": "Anhembi",
+                "cidade": "Sobral",
+                "estado": "Paraná",
                 "cep": 30100150,
-                "coordenadas": {
-                    "latitude": "-01.2738",
-                    "longitude": "18.2367"
-                }
             },
             "meta": {
                 "dinheiro": 1000,
@@ -32,30 +27,105 @@ var ongs =
                 "data": "2018-12-06",
                 "age": ""
             },
-            "telefone": "(00) 90000-0000",
-            "cel1": "(00) 90000-0000",
-            "cel2": "(00) 90000-0000",
+            "telefones": {
+                "fixo": "(46) 3283-2800",
+                "cel1": "(46) 97722-2403",
+            },
             "id": {
-                "sigla": "CFLZ",
-                "value": 0001
+                "sigla": "CAV",
+                "value": 1
             },
             "patrocinio": {
-                "nome": "patrocinador criança",
-                "img": "https://patrocinio.com.br/img.png"
+                "nome": "Zero Carbon",
+                "img": "../img/patrocinios/zero-carbon.png"
             },
             "imagem": {
-                "grande": "https://ong.org/logogrande.png",
-                "normal": "https://ong.org/logonormal.png",
-                "pequena": "https://ong.org/logopequena.png"
+                "normal": "../img/campanhas/casa-anjo-voluntarios.jpg",
             },
         },
         {
-            "firstName":"Anna",
-            "lastName":"Smith"
+            "info":{
+                "tipo": "alimento",
+                "nome-campanha": "Arrecadação Vila Real",
+                "email": "contato@vilareal.com",
+                "desc-pequena": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et sapien nec augue auctor varius. Nam rhoncus urna a convallis rhoncus. Nullam lobortis dui eu ex ornare, at tincidunt augue blandit. In ut molestie justo, quis posuere velit. Aliquam sed metus malesuada, molestie dui sed, dignissim mauris.",
+                "desc-grande": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et sapien nec augue auctor varius. Nam rhoncus urna a convallis rhoncus. Nullam lobortis dui eu ex ornare, at tincidunt augue blandit. In ut molestie justo, quis posuere velit. Aliquam sed metus malesuada, molestie dui sed, dignissim mauris. Etiam vel odio scelerisque, vestibulum lorem at, bibendum erat. Sed sed orci vehicula, dictum sem ac, porta velit. Vestibulum aliquam neque ut nisi posuere, at varius nulla posuere. Nulla tempus, mi quis mollis tempus, mauris nulla accumsan nibh, porta bibendum dolor eros non mi. Nam semper leo metus, vitae porta lorem varius sed. Pellentesque pharetra scelerisque venenatis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla facilisi. Praesent ac ultricies velit. Curabitur ac tortor felis. Fusce lobortis sem nisi, quis malesuada lorem scelerisque sit amet." 
+            },
+            "localizacao": {
+                "rua": "Afonso Pena",
+                "numero": 21,
+                "bairro": "Glória",
+                "cidade": "Ipatinga",
+                "estado": "Minas Gerais",
+                "cep": 30100150,
+            },
+            "meta": {
+                "dinheiro": 1300,
+                "duracao": 5,
+                "porcentagem_arrecadada": 75,
+                "valor_arrecadado": 975
+            },
+            "cadastro": {
+                "data": "2017-03-06",
+                "age": ""
+            },
+            "telefones": {
+                "fixo": "(31) 3283-2800",
+                "cel1": "(31) 97722-2403",
+            },
+            "id": {
+                "sigla": "AAV",
+                "value": 2
+            },
+            "patrocinio": {
+                "nome": "Cidadela",
+                "img": "../img/patrocinios/cidadela.png"
+            },
+            "imagem": {
+                "normal": "../img/campanhas/alimentos.jpg",
+            },
         },
         {
-            "firstName":"Peter",
-            "lastName":"Jones" 
-        }
+            "info":{
+                "tipo": "material",
+                "nome-campanha": "Fraldas Geriatricas para Idosos",
+                "email": "contato@asilosantamafalda.net",
+                "desc-pequena": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et sapien nec augue auctor varius. Nam rhoncus urna a convallis rhoncus. Nullam lobortis dui eu ex ornare, at tincidunt augue blandit. In ut molestie justo, quis posuere velit. Aliquam sed metus malesuada, molestie dui sed, dignissim mauris.",
+                "desc-grande": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et sapien nec augue auctor varius. Nam rhoncus urna a convallis rhoncus. Nullam lobortis dui eu ex ornare, at tincidunt augue blandit. In ut molestie justo, quis posuere velit. Aliquam sed metus malesuada, molestie dui sed, dignissim mauris. Etiam vel odio scelerisque, vestibulum lorem at, bibendum erat. Sed sed orci vehicula, dictum sem ac, porta velit. Vestibulum aliquam neque ut nisi posuere, at varius nulla posuere. Nulla tempus, mi quis mollis tempus, mauris nulla accumsan nibh, porta bibendum dolor eros non mi. Nam semper leo metus, vitae porta lorem varius sed. Pellentesque pharetra scelerisque venenatis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla facilisi. Praesent ac ultricies velit. Curabitur ac tortor felis. Fusce lobortis sem nisi, quis malesuada lorem scelerisque sit amet." 
+            },
+            "localizacao": {
+                "rua": "Ataídes Vieira",
+                "numero": 255,
+                "bairro": "Lourdes",
+                "cidade": "São Paulo",
+                "estado": "São Paulo",
+                "cep": 30100150,
+            },
+            "meta": {
+                "dinheiro": 1900,
+                "duracao": 5,
+                "porcentagem_arrecadada": 44,
+                "valor_arrecadado": 836
+            },
+            "cadastro": {
+                "data": "2018-12-06",
+                "age": ""
+            },
+            "telefones": {
+                "fixo": "(33) 3283-2800",
+                "cel1": "(33) 97722-2403",
+            },
+            "id": {
+                "sigla": "FGI",
+                "value": 3
+            },
+            "patrocinio": {
+                "nome": "treinus",
+                "img": "../img/patrocinios/treinus.png"
+            },
+            "imagem": {
+                "normal": "../img/campanhas/campanha-fraldas.jpg",
+            },
+        },
     ]
 }
