@@ -1,0 +1,61 @@
+var ongs = 
+{
+    "results":
+    [
+        {
+            "info":{
+                "tipo": "Criança",
+                "nome-campanha": "Ajude a Ong Criança Feliz",
+                "email": "contato@criancafeliz.org",
+                "desc-pequena": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et sapien nec augue auctor varius. Nam rhoncus urna a convallis rhoncus. Nullam lobortis dui eu ex ornare, at tincidunt augue blandit. In ut molestie justo, quis posuere velit. Aliquam sed metus malesuada, molestie dui sed, dignissim mauris.",
+                "desc-grande": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et sapien nec augue auctor varius. Nam rhoncus urna a convallis rhoncus. Nullam lobortis dui eu ex ornare, at tincidunt augue blandit. In ut molestie justo, quis posuere velit. Aliquam sed metus malesuada, molestie dui sed, dignissim mauris. Etiam vel odio scelerisque, vestibulum lorem at, bibendum erat. Sed sed orci vehicula, dictum sem ac, porta velit. Vestibulum aliquam neque ut nisi posuere, at varius nulla posuere. Nulla tempus, mi quis mollis tempus, mauris nulla accumsan nibh, porta bibendum dolor eros non mi. Nam semper leo metus, vitae porta lorem varius sed. Pellentesque pharetra scelerisque venenatis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla facilisi. Praesent ac ultricies velit. Curabitur ac tortor felis. Fusce lobortis sem nisi, quis malesuada lorem scelerisque sit amet." 
+            },
+            "localizacao": {
+                "rua": "claudio manuel costa",
+                "numero": 321,
+                "bairro": "savassi",
+                "cidade": "sobral",
+                "estado": "paranÃ¡",
+                "cep": 30100150,
+                "coordenadas": {
+                    "latitude": "-01.2738",
+                    "longitude": "18.2367"
+                }
+            },
+            "meta": {
+                "dinheiro": 1000,
+                "duracao": 5,
+                "porcentagem_arrecadada": 80,
+                "valor_arrecadado": 800
+            },
+            "cadastro": {
+                "data": "2018-12-06",
+                "age": ""
+            },
+            "telefone": "(00) 90000-0000",
+            "cel1": "(00) 90000-0000",
+            "cel2": "(00) 90000-0000",
+            "id": {
+                "sigla": "CFLZ",
+                "value": 0001
+            },
+            "patrocinio": {
+                "nome": "patrocinador criança",
+                "img": "https://patrocinio.com.br/img.png"
+            },
+            "imagem": {
+                "grande": "https://ong.org/logogrande.png",
+                "normal": "https://ong.org/logonormal.png",
+                "pequena": "https://ong.org/logopequena.png"
+            },
+        },
+        {
+            "firstName":"Anna",
+            "lastName":"Smith"
+        },
+        {
+            "firstName":"Peter",
+            "lastName":"Jones" 
+        }
+    ]
+}
