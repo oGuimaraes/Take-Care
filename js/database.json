@@ -47,7 +47,7 @@
 		},
 		{
 			"info": {
-				"tipo": "idosos",
+				"tipo": "alimento",
 				"nome_campanha": "Arrecadação Vila Real",
 				"email": "contato@vilareal.com",
 				"desc_pequena": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et sapien nec augue auctor varius.Maecenas et sapien nec augue, consectetur adipiscing elit.",
@@ -176,7 +176,7 @@
 		},
 		{
 			"info": {
-				"tipo": "remedios",
+				"tipo": "ecologia",
 				"nome_campanha": "Remédio para todos",
 				"email": "contato@viverde.net",
 				"desc_pequena": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et sapien nec augue auctor varius.Maecenas et sapien nec augue, consectetur adipiscing elit.",

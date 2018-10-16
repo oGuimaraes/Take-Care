@@ -9,7 +9,7 @@ axios.get('js/database.json')
         var createDiv;
         var createImg = document.createElement("img");
 
-        function criarCampanha(i) {
+        function criarCampanha(i,) {
             createDiv = document.createElement("div");
             /* pai.appendChild(filho) */
             areaCampanha.appendChild(createDiv);
@@ -21,7 +21,7 @@ axios.get('js/database.json')
             createImg.setAttribute("class", "imagem");
             createImg.setAttribute("src", response.data.results[i].imagem.normal);
 
-            var boxCampanha = document.querySelectorAll('.box-campanha');
+            boxCampanha = document.querySelectorAll('.box-campanha');
             createDiv = document.createElement("div");
             console.log(boxCampanha[i+1]);
             boxCampanha[i+1].appendChild(createDiv);
@@ -101,6 +101,11 @@ axios.get('js/database.json')
                 criarCampanha(i);
             }
         }
+        
+        function filtroCampanha(i){
+            criarCampanha(i);
+        }
+
 
         document.getElementById('search').addEventListener('change', function () {
             value = this.value;
@@ -108,12 +113,20 @@ axios.get('js/database.json')
 
             for (i = 0; i < results.length; i++) {
                 document.getElementById('box-campanha').remove()
-                categoria = results[i].info.tipo;
-                if (categoria == value) {
-                    criarCampanha(i);
-                }
+            }
+
+
+            var as=$(results).filter(function (i,n){return n.info.tipo === value});
+
+
+
+            for (var i=0; i < results.length; i++)
+            {
+                alert(as[i].info.nome_campanha);
+                filtroCampanha(i);
             }
         });
+
 
     })
     .catch(function (error) {
