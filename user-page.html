@@ -10,6 +10,7 @@
     <meta name="keywords" content="">
     <link rel="stylesheet/less" type="text/css" href="css/style.less">
     <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.7.1/less.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
     <title>Take Care</title>
 </head>
@@ -17,7 +18,6 @@
 <body>
     <header>
         <div class="container principal">
-            <p id="teste">teste</p>
             <div class="cabecalho">
                 <a href="#"><img class="imglogo" src="img/logo.jpeg"></a>
                 <div class="user-badge">
@@ -37,11 +37,15 @@
     <main>
         <div class="header-campanha">
             <h3>Procure pelas campanhas que mais te agradam</h3>
-            <select>
+            <select id="search">
+                <option></option>
+                <option value="todos">Listar Todas</option>
+                <option value="criancas">Criancas</option>
                 <option value="ecologia">Ecologia</option>
                 <option value="animais">Animais</option>
-                <option value="alimentos">Alimento</option>
+                <option value="alimento">Alimento</option>
                 <option value="idosos">Idosos</option>
+                <option value="remedios">Remedios</option>
             </select>
             <input name="pesquisa" placeholder="Busque pelo nome da campanha">
         </div>
@@ -49,7 +53,7 @@
 
             <div id="areaCampanha" class="area-campanhas">
 
-                <div class="box-campanha">
+                <div id=box-campanha"" class="box-campanha">
                     <img class="imagem" src="/img/dog.jpg">
                     <div class="progresso">
                         <div class="barra">
@@ -63,7 +67,7 @@
                         <div class="descricao">Lorem ipsum rutrum sociosqu congue lobortis dictum a justo, integer cubilia luctus nibh nulla fusce interdum lacinia malesuada, ac diam donec nostra diam est tempus.</div>
                         <div class="area-patrocinio">
                             <span class="patrocinio">patrocinado por</span>
-                            <a href="#"><img class="img-patrocinio" src="img/patrocinios/zero-carbon.png"></a>
+                            <a href="#" class="clicavel"><img class="img-patrocinio" src="img/patrocinios/zero-carbon.png"></a>
                         </div>
                     </div>  
                 </div>
