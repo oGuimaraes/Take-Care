@@ -1,134 +1,152 @@
-axios.get('js/database.json')
-    .then(function (response) {
-        console.log(response.data.results);
+var todasCampanhas = [];
+var indice;
 
-        var results = response.data.results;
-        var imagem;
-        var areaCampanha = document.getElementById("areaCampanha");
-        var boxCampanha = document.querySelectorAll('.box-campanha');
-        var createDiv;
-        var createImg = document.createElement("img");
+document.getElementById('search').addEventListener('change', function () {
 
-        function criarCampanha(i,) {
-            createDiv = document.createElement("div");
-            /* pai.appendChild(filho) */
-            areaCampanha.appendChild(createDiv);
-            createDiv.setAttribute("class", "box-campanha");
-            createDiv.setAttribute("id", "box-campanha");
+    var tipoSelecionado = this.value;
+    var campanhasFiltradas = filtrarCampanhasPorTipo(todasCampanhas, tipoSelecionado);
+    listarCampanhas(campanhasFiltradas);
+});
 
-            createImg = document.createElement("img");
-            createDiv.appendChild(createImg);
-            createImg.setAttribute("class", "imagem");
-            createImg.setAttribute("src", response.data.results[i].imagem.normal);
-
-            boxCampanha = document.querySelectorAll('.box-campanha');
-            createDiv = document.createElement("div");
-            console.log(boxCampanha[i+1]);
-            boxCampanha[i+1].appendChild(createDiv);
-            createDiv.setAttribute("class", "progresso");
-
-            progresso = document.querySelectorAll('.progresso');
-            createDiv = document.createElement("div");
-            progresso[i + 1].appendChild(createDiv);
-            createDiv.setAttribute("class", "barra");
-
-            barra = document.querySelectorAll('.barra');
-            createDiv = document.createElement("div");
-            barra[i + 1].appendChild(createDiv);
-            createDiv.setAttribute("class", "concluido");
-            createDiv.style.width = results[i].meta.porcentagem_arrecadada + "%";
-            createDiv.innerHTML = results[i].meta.porcentagem_arrecadada + "%";
-
-            arrecadado = document.querySelectorAll('.arrecadado');
-            createDiv = document.createElement("span");
-            progresso[i + 1].appendChild(createDiv);
-            createDiv.setAttribute("class", "arrecadado");
-            createDiv.innerHTML = "R$" + results[i].meta.valor_arrecadado;
-
-            createDiv = document.createElement("br");
-            progresso[i + 1].appendChild(createDiv);
-
-            createDiv = document.createElement("span");
-            progresso[i + 1].appendChild(createDiv);
-            createDiv.innerHTML = "arrecadado de ";
-
-            valorTotal = document.querySelectorAll('.valor-total');
-            createDiv = document.createElement("span");
-            progresso[i + 1].appendChild(createDiv);
-            createDiv.setAttribute("class", "valor-total");
-            createDiv.innerHTML = "R$" + results[i].meta.dinheiro;
-
-            createDiv = document.createElement("div");
-            boxCampanha[i + 1].appendChild(createDiv);
-            createDiv.setAttribute("class", "informacoes");
-
-            informacoes = document.querySelectorAll('.informacoes');
-            createDiv = document.createElement("div");
-            informacoes[i + 1].appendChild(createDiv);
-            createDiv.setAttribute("class", "titulo");
-            createDiv.innerHTML = results[i].info.nome_campanha;
-
-            createDiv = document.createElement("div");
-            informacoes[i + 1].appendChild(createDiv);
-            createDiv.setAttribute("class", "descricao");
-            createDiv.innerHTML = results[i].info.desc_pequena;
-
-            createDiv = document.createElement("div");
-            informacoes[i + 1].appendChild(createDiv);
-            createDiv.setAttribute("class", "area-patrocinio");
-            areaPatrocinio = document.querySelectorAll('.area-patrocinio');
-
-            createDiv = document.createElement("div");
-            areaPatrocinio[i + 1].appendChild(createDiv);
-            createDiv.setAttribute("class", "patrocinio");
-            createDiv.innerHTML = "patrocinado por";
-
-            createDiv = document.createElement("a");
-            createDiv.setAttribute("class", "clicavel");
-            areaPatrocinio[i + 1].appendChild(createDiv);
-
-            createDiv = document.createElement("img");
-            clicavel = document.querySelectorAll('.clicavel');
-            clicavel[i + 1].appendChild(createDiv);
-            createDiv.setAttribute("class", "img-patrocinio");
-            createDiv.setAttribute("src", results[i].patrocinio.img);
-        }
-
-        var valorSearch = document.getElementById('search').value;
-
-        if (valorSearch == "") {
-            for (i = 0; i < results.length; i++) {
-                criarCampanha(i);
-            }
-        }
-        
-        function filtroCampanha(i){
-            criarCampanha(i);
-        }
-
-
-        document.getElementById('search').addEventListener('change', function () {
-            value = this.value;
-            alert(value);
-
-            for (i = 0; i < results.length; i++) {
-                document.getElementById('box-campanha').remove()
-            }
-
-
-            var as=$(results).filter(function (i,n){return n.info.tipo === value});
-
-
-
-            for (var i=0; i < results.length; i++)
-            {
-                alert(as[i].info.nome_campanha);
-                filtroCampanha(i);
-            }
-        });
-
-
+axios
+    .get('db/campanhas.json')
+    .catch(function (erroRequisicao) {
+        manipularErroRequisicao(erroRequisicao);
     })
-    .catch(function (error) {
-        console.log(error);
+    .then(function (respostaRequisicao) {
+        manipularSucessoRequisicao(respostaRequisicao);
     });
+
+function manipularErroRequisicao(erro) {
+    console.log(erro);
+}
+
+function manipularSucessoRequisicao(resposta) {
+
+    todasCampanhas = resposta.data.results;
+    listarCampanhas(todasCampanhas);
+}
+
+function listarCampanhas(campanhas) {
+    removerCampanhasListadas();
+
+    for (var i = 0; i < campanhas.length; i++) {
+        var campanha = campanhas[i];
+        indice = i;
+        criarCardCampanha(campanha);
+    }
+}
+
+function removerCampanhasListadas() {
+    var areaCampanha = document.getElementById('area-campanha');
+
+    while (areaCampanha.firstChild) {
+        areaCampanha.removeChild(areaCampanha.firstChild);
+    }
+}
+
+function criarCardCampanha(campanha) {
+
+    var areaCampanha = document.getElementById("area-campanha");
+    var boxCampanha = document.querySelectorAll('.box-campanha');
+    var createDiv;
+    var createImg = document.createElement("img");
+
+    createDiv = document.createElement("div");
+    /* pai.appendChild(filho) */
+    areaCampanha.appendChild(createDiv);
+    createDiv.setAttribute("class", "box-campanha");
+    createDiv.setAttribute("id", "box-campanha");
+
+    createImg = document.createElement("img");
+    createDiv.appendChild(createImg);
+    createImg.setAttribute("class", "imagem");
+    createImg.setAttribute("src", campanha.imagem.normal);
+
+    boxCampanha = document.querySelectorAll('.box-campanha');
+    createDiv = document.createElement("div");
+    boxCampanha[indice].appendChild(createDiv);
+    createDiv.setAttribute("class", "progresso");
+
+    progresso = document.querySelectorAll('.progresso');
+    createDiv = document.createElement("div");
+    progresso[indice].appendChild(createDiv);
+    createDiv.setAttribute("class", "barra");
+
+    barra = document.querySelectorAll('.barra');
+    createDiv = document.createElement("div");
+    barra[indice].appendChild(createDiv);
+    createDiv.setAttribute("class", "concluido");
+    createDiv.style.width = campanha.meta.porcentagem_arrecadada + "%";
+    createDiv.innerHTML = campanha.meta.porcentagem_arrecadada + "%";
+
+    arrecadado = document.querySelectorAll('.arrecadado');
+    createDiv = document.createElement("span");
+    progresso[indice].appendChild(createDiv);
+    createDiv.setAttribute("class", "arrecadado");
+    createDiv.innerHTML = "R$" + campanha.meta.valor_arrecadado;
+
+    createDiv = document.createElement("br");
+    progresso[indice].appendChild(createDiv);
+
+    createDiv = document.createElement("span");
+    progresso[indice].appendChild(createDiv);
+    createDiv.innerHTML = "arrecadado de ";
+
+    valorTotal = document.querySelectorAll('.valor-total');
+    createDiv = document.createElement("span");
+    progresso[indice].appendChild(createDiv);
+    createDiv.setAttribute("class", "valor-total");
+    createDiv.innerHTML = "R$" + campanha.meta.dinheiro;
+
+    createDiv = document.createElement("div");
+    boxCampanha[indice].appendChild(createDiv);
+    createDiv.setAttribute("class", "informacoes");
+
+    informacoes = document.querySelectorAll('.informacoes');
+    createDiv = document.createElement("div");
+    informacoes[indice].appendChild(createDiv);
+    createDiv.setAttribute("class", "titulo");
+    createDiv.innerHTML = campanha.info.nome_campanha;
+
+    createDiv = document.createElement("div");
+    informacoes[indice].appendChild(createDiv);
+    createDiv.setAttribute("class", "descricao");
+    createDiv.innerHTML = campanha.info.desc_pequena;
+
+    createDiv = document.createElement("div");
+    informacoes[indice].appendChild(createDiv);
+    createDiv.setAttribute("class", "area-patrocinio");
+    areaPatrocinio = document.querySelectorAll('.area-patrocinio');
+
+    createDiv = document.createElement("div");
+    areaPatrocinio[indice].appendChild(createDiv);
+    createDiv.setAttribute("class", "patrocinio");
+    createDiv.innerHTML = "patrocinado por";
+
+    createDiv = document.createElement("a");
+    createDiv.setAttribute("class", "clicavel");
+    areaPatrocinio[indice].appendChild(createDiv);
+
+    createDiv = document.createElement("img");
+    clicavel = document.querySelectorAll('.clicavel');
+    clicavel[indice].appendChild(createDiv);
+    createDiv.setAttribute("class", "img-patrocinio");
+    createDiv.setAttribute("src", campanha.patrocinio.img);
+}
+
+function filtrarCampanhasPorTipo(campanhas, tipo) {
+    var campanhasFiltradas = [];
+
+    for (var i = 0; i < campanhas.length; i++) {
+        
+        if (tipo === campanhas[i].info.tipo) {
+            campanhasFiltradas.push(campanhas[i]);
+        }
+
+        if (tipo === "todos") {
+            campanhasFiltradas.push(campanhas[i]);
+        }
+    }
+    return campanhasFiltradas;
+}
