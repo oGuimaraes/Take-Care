@@ -39,10 +39,10 @@
 			},
 			"patrocinio": {
 				"nome": "Ecovec",
-				"img": "../img/patrocinios/ecovec.png"
+				"img": "img/patrocinios/ecovec.png"
 			},
 			"imagem": {
-				"normal": "../img/campanhas/dog.jpg"
+				"normal": "img/campanhas/dog.jpg"
 			}
 		},
         {
@@ -83,10 +83,10 @@
 			},
 			"patrocinio": {
 				"nome": "Zero Carbon",
-				"img": "../img/patrocinios/zero-carbon.png"
+				"img": "img/patrocinios/zero-carbon.png"
 			},
 			"imagem": {
-				"normal": "../img/campanhas/casa-anjo-voluntarios.jpg"
+				"normal": "img/campanhas/casa-anjo-voluntarios.jpg"
 			}
 		},
 		{
@@ -126,10 +126,10 @@
 			},
 			"patrocinio": {
 				"nome": "Cidadela",
-				"img": "../img/patrocinios/cidadela.png"
+				"img": "img/patrocinios/cidadela.png"
 			},
 			"imagem": {
-				"normal": "../img/campanhas/alimentos.jpg"
+				"normal": "img/campanhas/alimentos.jpg"
 			}
 		},
 		{
@@ -169,10 +169,10 @@
 			},
 			"patrocinio": {
 				"nome": "treinus",
-				"img": "../img/patrocinios/treinus.png"
+				"img": "img/patrocinios/treinus.png"
 			},
 			"imagem": {
-				"normal": "../img/campanhas/campanha-fraldas.jpg"
+				"normal": "img/campanhas/campanha-fraldas.jpg"
 			}
 		},
 		{
@@ -212,10 +212,10 @@
 			},
 			"patrocinio": {
 				"nome": "Lemonade",
-				"img": "../img/patrocinios/lemonade.png"
+				"img": "img/patrocinios/lemonade.png"
 			},
 			"imagem": {
-				"normal": "../img/campanhas/ecologia.jpg"
+				"normal": "img/campanhas/ecologia.jpg"
 			}
 		},
 		{
@@ -255,10 +255,10 @@
 			},
 			"patrocinio": {
 				"nome": "Site Ware",
-				"img": "../img/patrocinios/siteware.png"
+				"img": "img/patrocinios/siteware.png"
 			},
 			"imagem": {
-				"normal": "../img/campanhas/remédios.jpg"
+				"normal": "img/campanhas/remédios.jpg"
 			}
         },
         {
@@ -298,10 +298,10 @@
 			},
 			"patrocinio": {
 				"nome": "Ecovec",
-				"img": "../img/patrocinios/ecovec.png"
+				"img": "img/patrocinios/ecovec.png"
 			},
 			"imagem": {
-				"normal": "../img/campanhas/canicacia.jpg"
+				"normal": "img/campanhas/canicacia.jpg"
 			}
         },
         {
@@ -341,10 +341,10 @@
 			},
 			"patrocinio": {
 				"nome": "Ecovec",
-				"img": "../img/patrocinios/ecovec.png"
+				"img": "img/patrocinios/ecovec.png"
 			},
 			"imagem": {
-				"normal": "../img/campanhas/tartaruga.jpg"
+				"normal": "img/campanhas/tartaruga.jpg"
 			}
         },
         {
@@ -384,10 +384,10 @@
 			},
 			"patrocinio": {
 				"nome": "Doar Sangue",
-				"img": "../img/patrocinios/doar-sangue.png"
+				"img": "img/patrocinios/doar-sangue.png"
 			},
 			"imagem": {
-				"normal": "../img/campanhas/lar-sao-jose.jpg"
+				"normal": "img/campanhas/lar-sao-jose.jpg"
 			}
 		},
 		{
@@ -427,10 +427,10 @@
 			},
 			"patrocinio": {
 				"nome": "Doar Sangue",
-				"img": "../img/patrocinios/doar-sangue.png"
+				"img": "img/patrocinios/doar-sangue.png"
 			},
 			"imagem": {
-				"normal": "../img/campanhas/leite.jpg"
+				"normal": "img/campanhas/leite.jpg"
 			}
 		},
 		{
@@ -470,10 +470,10 @@
 			},
 			"patrocinio": {
 				"nome": "Ecovec",
-				"img": "../img/patrocinios/ecovec.png"
+				"img": "img/patrocinios/ecovec.png"
 			},
 			"imagem": {
-				"normal": "../img/campanhas/projeto-limpeza.jpg"
+				"normal": "img/campanhas/projeto-limpeza.jpg"
 			}
 		}
 	]
