@@ -139,13 +139,14 @@ function filtrarCampanhasPorTipo(campanhas, tipo) {
     var campanhasFiltradas = [];
 
     for (var i = 0; i < campanhas.length; i++) {
+        var campanha = campanhas[i];
         
         if (tipo === campanhas[i].info.tipo) {
-            campanhasFiltradas.push(campanhas[i]);
+            campanhasFiltradas.push(campanha);
         }
 
         if (tipo === "todos") {
-            campanhasFiltradas.push(campanhas[i]);
+            campanhasFiltradas.push(campanha);
         }
     }
     return campanhasFiltradas;

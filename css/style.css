@@ -1,0 +1,325 @@
+/*********************
+Fontes
+*********************/
+/* cyrillic-ext */
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu72xKOzY.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu5mxKOzY.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* greek-ext */
+  @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7mxKOzY.woff2) format('woff2');
+    unicode-range: U+1F00-1FFF;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4WxKOzY.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7WxKOzY.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7GxKOzY.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'Dosis';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Dosis SemiBold'), local('Dosis-SemiBold'), url(https://fonts.gstatic.com/s/dosis/v7/HhyXU5sn9vOmLzG3L-CLMItyTA.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Dosis';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Dosis SemiBold'), local('Dosis-SemiBold'), url(https://fonts.gstatic.com/s/dosis/v7/HhyXU5sn9vOmLzG3L-CFMIs.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'Dosis';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Dosis Bold'), local('Dosis-Bold'), url(https://fonts.gstatic.com/s/dosis/v7/HhyXU5sn9vOmLzHTLuCLMItyTA.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Dosis';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Dosis Bold'), local('Dosis-Bold'), url(https://fonts.gstatic.com/s/dosis/v7/HhyXU5sn9vOmLzHTLuCFMIs.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* cyrillic-ext */
+  @font-face {
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('PT Sans'), local('PTSans-Regular'), url(https://fonts.gstatic.com/s/ptsans/v9/jizaRExUiTo99u79D0-ExdGM.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('PT Sans'), local('PTSans-Regular'), url(https://fonts.gstatic.com/s/ptsans/v9/jizaRExUiTo99u79D0aExdGM.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('PT Sans'), local('PTSans-Regular'), url(https://fonts.gstatic.com/s/ptsans/v9/jizaRExUiTo99u79D0yExdGM.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('PT Sans'), local('PTSans-Regular'), url(https://fonts.gstatic.com/s/ptsans/v9/jizaRExUiTo99u79D0KExQ.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+  p {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 120px;
+    font-family: Roboto;
+    color: #747474;
+  }
+  .principal {
+    display: flex;
+    flex-direction: column;
+    background-image: url("../img/main-picture.png");
+    background-size: cover;
+    height: 100vh;
+  }
+  .principal .cabecalho {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 10px 0;
+    height: 60px;
+  }
+  .principal .cabecalho a {
+    margin-left: 0;
+  }
+  .principal .cabecalho .imglogo {
+    width: 100px;
+    margin: 15px 0 0 0;
+  }
+  .principal .titulo {
+    font-family: 'Dosis';
+    color: ghostwhite;
+    align-self: center;
+  }
+  .principal .titulo h1 {
+    margin-top: 110px;
+    font-size: 110px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-shadow: 0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
+  }
+  .principal .titulo h2 {
+    font-size: 30px;
+    text-align: center;
+  }
+  .user-badge {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    width: 250px;
+    height: 38px;
+    border-radius: 24px;
+    background-color: #ffffff;
+  }
+  .user-badge .picture {
+    border-radius: 20px;
+    height: 34px;
+    width: 34px;
+    margin: auto 5px;
+  }
+  .user-badge span:nth-child(3) {
+    margin: 0;
+  }
+  .header-campanha {
+    background-color: #d9e0e4;
+    padding: 20px 120px 25px;
+    font-family: Roboto;
+    color: #7d7c7c;
+  }
+  .header-campanha h3 {
+    font-style: italic;
+  }
+  .header-campanha select {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #666666;
+    height: 32px;
+    border: none;
+    border-radius: 25px;
+    padding: 0 15px 0 30px;
+    margin-top: 10px;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.03);
+    padding-left: 16px;
+    padding-right: 8px;
+    width: 180px;
+  }
+  .header-campanha input {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #666666;
+    height: 32px;
+    border: none;
+    border-radius: 25px;
+    padding: 0 15px 0 30px;
+    margin-top: 10px;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.03);
+    margin-left: 20px;
+    width: 360px;
+  }
+  .feed-campanha {
+    padding: 20px 120px;
+    background-color: #efefef;
+  }
+  .feed-campanha .area-campanhas {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .feed-campanha .area-campanhas .box-campanha {
+    width: 340px;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.03);
+    border: solid 1px #efefef;
+    border-radius: 5px;
+    background-color: #ffffff;
+    margin: 15px auto;
+  }
+  .feed-campanha .area-campanhas .box-campanha .imagem {
+    width: 100%;
+    min-height: 155px;
+    height: 244px;
+    max-width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  .feed-campanha .area-campanhas .box-campanha .progresso {
+    background-color: #fafafa;
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 13px;
+    font-style: italic;
+    text-align: center;
+    color: #a7a7a7;
+  }
+  .feed-campanha .area-campanhas .box-campanha .progresso .barra {
+    border: 1px solid #efefef;
+    background-color: #f7f7f7;
+    width: 80%;
+    height: 28px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+  }
+  .feed-campanha .area-campanhas .box-campanha .progresso .barra .concluido {
+    display: flex;
+    align-items: center;
+    color: #747474;
+    background-color: #4ee08b;
+    border-radius: 15px;
+    float: left;
+    width: 60%;
+    height: 100%;
+    justify-content: center;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 600;
+  }
+  .feed-campanha .area-campanhas .box-campanha .progresso .arrecadado {
+    font-size: 16px;
+    font-weight: bold;
+    color: #4ee08b;
+  }
+  .feed-campanha .area-campanhas .box-campanha .progresso .valor-total {
+    font-weight: bold;
+  }
+  .feed-campanha .area-campanhas .box-campanha .informacoes {
+    text-align: center;
+    padding: 20px 15px 0px;
+  }
+  .feed-campanha .area-campanhas .box-campanha .informacoes .titulo {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .feed-campanha .area-campanhas .box-campanha .informacoes .descricao {
+    font-size: 14px;
+    margin-top: 20px;
+  }
+  .feed-campanha .area-campanhas .box-campanha .informacoes .area-patrocinio {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 10px 15px;
+    margin-top: 25px;
+  }
+  .feed-campanha .area-campanhas .box-campanha .informacoes .area-patrocinio .patrocinio {
+    font-size: 12px;
+  }
+  .feed-campanha .area-campanhas .box-campanha .informacoes .area-patrocinio .img-patrocinio {
+    padding: 10px 30px 0;
+    max-height: 90px;
+    max-width: 100%;
+    width: auto;
+  }

@@ -134,7 +134,7 @@
 		},
 		{
 			"info": {
-				"tipo": "idosos",
+				"tipo": "materiais",
 				"nome_campanha": "Fraldas Geriatricas para Idosos",
 				"email": "contato@asilosantamafalda.net",
 				"desc_pequena": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et sapien nec augue auctor varius.Maecenas et sapien nec augue, consectetur adipiscing elit.",
@@ -388,6 +388,92 @@
 			},
 			"imagem": {
 				"normal": "../img/campanhas/lar-sao-jose.jpg"
+			}
+		},
+		{
+			"info": {
+				"tipo": "materiais",
+				"nome_campanha": "Campanha Leite que alimenta ",
+				"email": "contato@saojose.net",
+				"desc_pequena": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et sapien nec augue auctor varius.Maecenas et sapien nec augue, consectetur adipiscing elit.",
+				"desc_grande": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et sapien nec augue auctor varius. Nam rhoncus urna a convallis rhoncus. Nullam lobortis dui eu ex ornare, at tincidunt augue blandit. In ut molestie justo, quis posuere velit. Aliquam sed metus malesuada, molestie dui sed, dignissim mauris. Etiam vel odio scelerisque, vestibulum lorem at, bibendum erat. Sed sed orci vehicula, dictum sem ac, porta velit. Vestibulum aliquam neque ut nisi posuere, at varius nulla posuere. Nulla tempus, mi quis mollis tempus, mauris nulla accumsan nibh, porta bibendum dolor eros non mi. Nam semper leo metus, vitae porta lorem varius sed. Pellentesque pharetra scelerisque venenatis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla facilisi. Praesent ac ultricies velit. Curabitur ac tortor felis. Fusce lobortis sem nisi, quis malesuada lorem scelerisque sit amet."
+			},
+			"localizacao": {
+				"rua": "Silva Lobo",
+				"numero": 88,
+				"bairro": "São Geraldo",
+				"cidade": "Vitória",
+				"estado": "Espirito Santo",
+				"cep": 30100150
+			},
+			"meta": {
+				"dinheiro": "900,00",
+				"duracao": 5,
+				"porcentagem_arrecadada": 15,
+				"valor_arrecadado": "135,00"
+			},
+			"cadastro": {
+                "responsavel": "Lucas Moura",
+				"data": "2018-12-06",
+				"age": ""
+			},
+			"telefones": {
+				"fixo": "(33) 3283-2800",
+				"cel1": "(33) 97722-2403"
+			},
+			"id": {
+				"sigla": "CLA",
+				"value": 4
+			},
+			"patrocinio": {
+				"nome": "Doar Sangue",
+				"img": "../img/patrocinios/doar-sangue.png"
+			},
+			"imagem": {
+				"normal": "../img/campanhas/leite.jpg"
+			}
+		},
+		{
+			"info": {
+				"tipo": "ecologia",
+				"nome_campanha": "Projeto Limpeza da Praia do Forte",
+				"email": "contato@saojose.net",
+				"desc_pequena": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et sapien nec augue auctor varius.Maecenas et sapien nec augue, consectetur adipiscing elit.",
+				"desc_grande": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et sapien nec augue auctor varius. Nam rhoncus urna a convallis rhoncus. Nullam lobortis dui eu ex ornare, at tincidunt augue blandit. In ut molestie justo, quis posuere velit. Aliquam sed metus malesuada, molestie dui sed, dignissim mauris. Etiam vel odio scelerisque, vestibulum lorem at, bibendum erat. Sed sed orci vehicula, dictum sem ac, porta velit. Vestibulum aliquam neque ut nisi posuere, at varius nulla posuere. Nulla tempus, mi quis mollis tempus, mauris nulla accumsan nibh, porta bibendum dolor eros non mi. Nam semper leo metus, vitae porta lorem varius sed. Pellentesque pharetra scelerisque venenatis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla facilisi. Praesent ac ultricies velit. Curabitur ac tortor felis. Fusce lobortis sem nisi, quis malesuada lorem scelerisque sit amet."
+			},
+			"localizacao": {
+				"rua": "Silva Lobo",
+				"numero": 88,
+				"bairro": "São Geraldo",
+				"cidade": "Vitória",
+				"estado": "Espirito Santo",
+				"cep": 30100150
+			},
+			"meta": {
+				"dinheiro": "1600,00",
+				"duracao": 5,
+				"porcentagem_arrecadada": 27,
+				"valor_arrecadado": "432,00"
+			},
+			"cadastro": {
+                "responsavel": "Lucas Moura",
+				"data": "2018-12-06",
+				"age": ""
+			},
+			"telefones": {
+				"fixo": "(33) 3283-2800",
+				"cel1": "(33) 97722-2403"
+			},
+			"id": {
+				"sigla": "CLA",
+				"value": 4
+			},
+			"patrocinio": {
+				"nome": "Ecovec",
+				"img": "../img/patrocinios/ecovec.png"
+			},
+			"imagem": {
+				"normal": "../img/campanhas/projeto-limpeza.jpg"
 			}
 		}
 	]
