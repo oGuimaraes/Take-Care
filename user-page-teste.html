@@ -111,8 +111,8 @@
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
-        document.getElementById("logged").style.display = flex;
-        document.getElementById("login").style.display = none;
+        document.getElementById("logged").style.display = "flex";
+        document.getElementById("login").style.display = "none";
 
         var userNow = firebase.auth().currentUser;
 
@@ -124,8 +124,8 @@ firebase.auth().onAuthStateChanged(function(user) {
 
     } else {
       // No user is signed in.
-        document.getElementById("logged").style.display = none;
-        document.getElementById("login").style.display = flex;
+        document.getElementById("logged").style.display = "none";
+        document.getElementById("login").style.display = "flex";
     }
   });
 </script>
