@@ -31,7 +31,7 @@
                 <!--Usuário logado-->
                 <div id="logged" class="user-badge">
                     <img class="picture" src="img/profile-picture.jpg">
-                    <span id="user_fullname">Eduardo Machado</span>
+                    <span id="user_fullname">nome</span>
                     <span>/</span>
                     <span class="sair">Sair</span>
                 </div>
@@ -119,7 +119,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         if(userNow != null){
             var emailId = userNow.email;
 
-            document.getElementById("user_FullName").innerHTML = emailId;
+            document.getElementById("user_fullname").innerHTML = emailId;
         }
 
     } else {
