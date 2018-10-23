@@ -111,8 +111,12 @@
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
+        document.getElementsByClassName("user-badge").style.display = flex;
+        document.getElementsByClassName("painel-login").style.display = none;
     } else {
       // No user is signed in.
+        document.getElementsByClassName("user-badge").style.display = none;
+        document.getElementsByClassName("painel-login").style.display = flex;
     }
   });
 </script>
