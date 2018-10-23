@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet/less" type="text/css" href="less/style.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.7.1/less.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <title>Take Care</title>
+</head>
+
+<body>
+    <header>
+        <div class="container principal">
+            <div class="cabecalho">
+                <a href="#"><img class="imglogo" src="img/logo.png"></a>
+                <!--Painel de login-->
+                <div class="painel-login">
+                    <input name="email" placeholder="Email">
+                    <input type="password" placeholder="Password" name="pass">
+                    <button>Login</button>
+                </div>
+                <!--Usuário logado-->
+                <div class="user-badge">
+                    <img class="picture" src="img/profile-picture.jpg">
+                    <span>Eduardo Machado</span>
+                    <span>/</span>
+                    <span class="sair">Sair</span>
+                </div>
+            </div>
+            <div class="titulo">
+                <h1>TAKE CARE</h1>
+                <h2>Unindo Doadores à Ongs</h2>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="header-campanha">
+            <h3>Procure pelas campanhas que mais te agradam</h3>
+            <select id="search">
+                <option disabled selected value="">Escolha por tipo</option>
+                <option value="todos">Listar Todas</option>
+                <option value="alimento">Alimento</option>
+                <option value="animais">Animais</option>
+                <option value="criancas">Criancas</option>
+                <option value="ecologia">Ecologia</option>
+                <option value="idosos">Idosos</option>
+                <option value="materiais">Materiais</option>
+            </select>
+            <input name="pesquisa" placeholder="Busque pelo nome da campanha">
+        </div>
+        <div class="feed-campanha container">
+
+            <div id="area-campanha" class="area-campanhas">
+                <div id=box-campanha"" class="box-campanha">
+                    <img class="imagem" src="">
+                    <div class="progresso">
+                        <div class="barra">
+                            <div class="concluido"></div>
+                        </div>
+                        <span class="arrecadado"></span><br>
+                        <span></span><span class="valor-total"></span>
+                    </div>
+                    <div class="informacoes">
+                        <div class="titulo"></div>
+                        <div class="descricao"></div>
+                        <div class="area-patrocinio">
+                            <span class="patrocinio"></span>
+                            <a href="#" class="clicavel"><img class="" src=""></a>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+    <footer>
+        
+    </footer>
+
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="text/javascript" src="db/campanhas.json"></script>
+<script type="text/javascript" src="js/app.js"></script>
