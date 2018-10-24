@@ -1,16 +1,22 @@
 // Initialize Cloud Firestore through Firebase
 var db = firebase.firestore();
 
+var areaCampanha = document.getElementById("areaCampanha");
+var boxCampanha = document.querySelectorAll('.box-campanha');
+var createDiv;
+var createImg = document.createElement("img");
 
 db.collection("campanhas").get().then(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
 
-        criarCampanha(doc.data().imagem, doc.data().porcentagem_arrecadada, doc.data().valor_arrecadado,
-        doc.data().valor_total, doc.data().titulo, doc.data().descricao, doc.data().imagem_patrocinio);
-    });
-});
+        var img = doc.data().imagem;
+        var porcentagem = doc.data().porcentagem_arrecadada;
+        var arrecadado = doc.data().valor_arrecadado;
+        var total = doc.data().valor_total;
+        var tituloc = doc.data().titulo;
+        var desc = doc.data().descricao;
+        var patrocinio = doc.data().imagem_patrocinio;
 
-function criarCampanha(img, porcentagem, arrecadado, total, tituloc, desc, patrocinio,) {
     createDiv = document.createElement("div");
     areaCampanha.appendChild(createDiv);
     createDiv.setAttribute("class", "box-campanha");
@@ -92,4 +98,7 @@ function criarCampanha(img, porcentagem, arrecadado, total, tituloc, desc, patro
     clicavel[i + 1].appendChild(createDiv);
     createDiv.setAttribute("class", "img-patrocinio");
     createDiv.setAttribute("src", patrocinio);
-}
+
+    console.log();
+    });
+});
