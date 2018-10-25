@@ -29,11 +29,13 @@ function manipularSucessoRequisicao(resposta) {
 
 function listarCampanhas(campanhas) {
     removerCampanhasListadas();
+    var areaCampanha = document.getElementById("area-campanha");
 
     for (var i = 0; i < campanhas.length; i++) {
         var campanha = campanhas[i];
         indice = i;
-        criarCardCampanha(campanha);
+    var areaCampanha = document.getElementById("area-campanha");
+        criarCardCampanha(areaCampanha, campanha);
     }
 }
 
@@ -45,94 +47,84 @@ function removerCampanhasListadas() {
     }
 }
 
-function criarCardCampanha(campanha) {
+function criarCardCampanha(areaCampanha, campanha) {
+    //var boxCampanha = document.querySelectorAll('.box-campanha');
+    //var boxCampanha = document.createElement ('div')
+    //querySelectorAll('.box-campanha');
 
-    var areaCampanha = document.getElementById("area-campanha");
-    var boxCampanha = document.querySelectorAll('.box-campanha');
-    var createDiv;
+    var divCampanha = document.createElement("div");
+    divCampanha.setAttribute("class", "box-campanha");
+    divCampanha.setAttribute("id", "box-campanha");
+
     var createImg = document.createElement("img");
-
-    createDiv = document.createElement("div");
-    /* pai.appendChild(filho) */
-    areaCampanha.appendChild(createDiv);
-    createDiv.setAttribute("class", "box-campanha");
-    createDiv.setAttribute("id", "box-campanha");
-
-    createImg = document.createElement("img");
-    createDiv.appendChild(createImg);
+    divCampanha.appendChild(createImg);
     createImg.setAttribute("class", "imagem");
     createImg.setAttribute("src", campanha.imagem.normal);
 
-    boxCampanha = document.querySelectorAll('.box-campanha');
-    createDiv = document.createElement("div");
-    boxCampanha[indice].appendChild(createDiv);
-    createDiv.setAttribute("class", "progresso");
+    divProgresso = document.createElement("div");
+    divProgresso.setAttribute("class", "progresso");
+    divCampanha.appendChild(divProgresso);
+    
+    divBarra = document.createElement("div");   
+    divBarra.setAttribute("class", "barra");
+    divProgresso.appendChild(divBarra);
 
-    progresso = document.querySelectorAll('.progresso');
-    createDiv = document.createElement("div");
-    progresso[indice].appendChild(createDiv);
-    createDiv.setAttribute("class", "barra");
+    divConcluido = document.createElement('div');
+    divConcluido.setAttribute("class", "concluido");
+    divConcluido.style.width = campanha.meta.porcentagem_arrecadada + "%";
+    divConcluido.innerHTML = campanha.meta.porcentagem_arrecadada + "%";
+    divBarra.appendChild(divConcluido);
 
-    barra = document.querySelectorAll('.barra');
-    createDiv = document.createElement("div");
-    barra[indice].appendChild(createDiv);
-    createDiv.setAttribute("class", "concluido");
-    createDiv.style.width = campanha.meta.porcentagem_arrecadada + "%";
-    createDiv.innerHTML = campanha.meta.porcentagem_arrecadada + "%";
+    spanArrecadado = document.createElement("span");
+    spanArrecadado.setAttribute("class", "arrecadado");
+    divProgresso.appendChild(spanArrecadado);
+    spanArrecadado.innerHTML = "R$" + campanha.meta.valor_arrecadado;
 
-    arrecadado = document.querySelectorAll('.arrecadado');
-    createDiv = document.createElement("span");
-    progresso[indice].appendChild(createDiv);
-    createDiv.setAttribute("class", "arrecadado");
-    createDiv.innerHTML = "R$" + campanha.meta.valor_arrecadado;
+    divProgresso.appendChild(document.createElement("br"));
 
-    createDiv = document.createElement("br");
-    progresso[indice].appendChild(createDiv);
+    spanArrecadadoDe = document.createElement("span");
+    spanArrecadadoDe.innerHTML = "arrecadado de ";
+    divProgresso.appendChild(spanArrecadadoDe);
 
-    createDiv = document.createElement("span");
-    progresso[indice].appendChild(createDiv);
-    createDiv.innerHTML = "arrecadado de ";
+    spanValor = document.createElement("span");
+    spanValor.setAttribute("class", "valor-total");
+    spanValor.innerHTML = "R$" + campanha.meta.dinheiro;
+    divProgresso.appendChild(spanValor);
 
-    valorTotal = document.querySelectorAll('.valor-total');
-    createDiv = document.createElement("span");
-    progresso[indice].appendChild(createDiv);
-    createDiv.setAttribute("class", "valor-total");
-    createDiv.innerHTML = "R$" + campanha.meta.dinheiro;
+    divInfo = document.createElement("div");
+    divInfo.setAttribute("class", "informacoes");
+    divCampanha.appendChild(divInfo);
 
-    createDiv = document.createElement("div");
-    boxCampanha[indice].appendChild(createDiv);
-    createDiv.setAttribute("class", "informacoes");
+    divTitulo = document.createElement("div");
+    divTitulo.setAttribute("class", "titulo");
+    divTitulo.innerHTML = campanha.info.nome_campanha;
+    divInfo.appendChild(divTitulo);
 
-    informacoes = document.querySelectorAll('.informacoes');
-    createDiv = document.createElement("div");
-    informacoes[indice].appendChild(createDiv);
-    createDiv.setAttribute("class", "titulo");
-    createDiv.innerHTML = campanha.info.nome_campanha;
+    divDescricao = document.createElement("div");
+    divDescricao.setAttribute("class", "descricao");
+    divDescricao.innerHTML = campanha.info.desc_pequena;
+    divInfo.appendChild(divDescricao);
 
-    createDiv = document.createElement("div");
-    informacoes[indice].appendChild(createDiv);
-    createDiv.setAttribute("class", "descricao");
-    createDiv.innerHTML = campanha.info.desc_pequena;
+    divAreaPatrocinio = document.createElement("div");
+    divAreaPatrocinio.setAttribute("class", "area-patrocinio");
+    divInfo.appendChild(divAreaPatrocinio);
 
-    createDiv = document.createElement("div");
-    informacoes[indice].appendChild(createDiv);
-    createDiv.setAttribute("class", "area-patrocinio");
-    areaPatrocinio = document.querySelectorAll('.area-patrocinio');
+    divPatrocinio = document.createElement("div");
+    divPatrocinio.setAttribute("class", "patrocinio");
+    divPatrocinio.innerHTML = "patrocinado por";
+    divAreaPatrocinio.appendChild(divPatrocinio);
 
-    createDiv = document.createElement("div");
-    areaPatrocinio[indice].appendChild(createDiv);
-    createDiv.setAttribute("class", "patrocinio");
-    createDiv.innerHTML = "patrocinado por";
+    divClicavel = document.createElement("a");
+    divClicavel.setAttribute("class", "clicavel");
+    divAreaPatrocinio.appendChild(divClicavel);
 
-    createDiv = document.createElement("a");
-    createDiv.setAttribute("class", "clicavel");
-    areaPatrocinio[indice].appendChild(createDiv);
+    imgPatrocinio = document.createElement("img");
+    imgPatrocinio.setAttribute("class", "img-patrocinio");
+    imgPatrocinio.setAttribute("src", campanha.patrocinio.img);
+    divClicavel.appendChild(imgPatrocinio);
 
-    createDiv = document.createElement("img");
-    clicavel = document.querySelectorAll('.clicavel');
-    clicavel[indice].appendChild(createDiv);
-    createDiv.setAttribute("class", "img-patrocinio");
-    createDiv.setAttribute("src", campanha.patrocinio.img);
+    // Adiciona elemento ao DOM
+    areaCampanha.appendChild(divCampanha);
 }
 
 function filtrarCampanhasPorTipo(campanhas, tipo) {
