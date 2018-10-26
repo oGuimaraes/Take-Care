@@ -6,19 +6,9 @@ var areaCampanha = document.getElementById('area-campanha');
 db.collection("campanhas").get().then(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
 
-        /* var img = doc.data().imagem;
-        var porcentagem = doc.data().porcentagem_arrecadada;
-        var arrecadado = doc.data().valor_arrecadado;
-        var total = doc.data().valor_total;
-        var tituloc = doc.data().titulo;
-        var desc = doc.data().descricao;
-        var patrocinio_img = doc.data().imagem_patrocinio;
-        var link_patrocinio = doc.data().link_patrocinio; */
-
-        // Remove all campanhas
-
         // Add campanhas
         criarCardCampanha(areaCampanha, doc);
+        
     });
 });
 
