@@ -3,13 +3,42 @@ var db = firebase.firestore();
 
 var areaCampanha = document.getElementById('area-campanha');
 
-db.collection("campanhas").get().then(function(querySnapshot) {
-    querySnapshot.forEach(function(doc) {
 
-        // Add campanhas
-        criarCardCampanha(areaCampanha, doc);
+db.collection("campanhas").get().then(function(querySnapshot) {
+    var select = document.getElementById('search');
+
+    // Run all campanhas first
+    querySnapshot.forEach(function(doc){
         
+        if (select.value == "todos"){
+            criarCardCampanha(areaCampanha, doc);
+        }else{
+            if (select.value == doc.data().tipo){
+                criarCardCampanha(areaCampanha, doc);
+            }
+        }
     });
+
+    // Filter starts here
+    select.addEventListener('change', function () {
+            var value = this.value;
+
+            removerCampanhasListadas(areaCampanha);
+
+        querySnapshot.forEach(function(doc) {
+            
+            if (value == "todos"){
+                criarCardCampanha(areaCampanha, doc);
+    
+            }else{
+                    
+                if (value == doc.data().tipo){
+                    criarCardCampanha(areaCampanha, doc);
+                }
+            }
+        });     
+    });
+    // Filter ends here
 });
 
 function removerCampanhasListadas(areaCampanha) {
