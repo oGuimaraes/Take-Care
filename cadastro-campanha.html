@@ -36,62 +36,65 @@
                 </div>
             </div>
 
-            <form id='form-cadastro' class='formulario-cadastro container'>
-                <div class="row">
-                    <span>Categoria da Campanha</span>
-                    <select id="tipo-campanha">
-                        <option disabled selected value="todos">Escolha por tipo</option>
-                        <option value="alimento">Alimento</option>
-                        <option value="animais">Animais</option>
-                        <option value="criancas">Criancas</option>
-                        <option value="ecologia">Ecologia</option>
-                        <option value="idosos">Idosos</option>
-                        <option value="materiais">Materiais</option>
-                    </select>
+            <div class="box-criar-campanha">
+                <form id='form-cadastro' class='formulario-cadastro'>
+                    <h2 class="titulo">Criação de Campanha</h2>
+                    <div class="row">
+                        <span>Categorize o tipo de sua campanha: </span>
+                        <select id="tipo-campanha">
+                            <option disabled selected value="todos">Escolha por tipo</option>
+                            <option value="alimento">Alimento</option>
+                            <option value="animais">Animais</option>
+                            <option value="criancas">Criancas</option>
+                            <option value="ecologia">Ecologia</option>
+                            <option value="idosos">Idosos</option>
+                            <option value="materiais">Materiais</option>
+                        </select>
+                    </div>
+
+                    <div class="row">
+                        <span>Dê um nome a sua campanha:</span>
+                        <input id='nome-campanha'>
+                    </div>
+
+                    <div class="row">
+                        <span>Escreva uma breve descrição:</span>
+                        <input id='descricao-campanha'>
+                    </div>
+
+                    <div class="row">
+                        <span>Link da Imagem</span>
+                        <input type="file" id='link-imagem'>
+                    </div>
+
+                    <div class="row">
+                        <span>Imagem Patrocinio</span>
+                        <input type="file" id='img-patrocinio'>
+                    </div>
+
+                    <div class="row">
+                        <span>Link Patrocinio</span>
+                        <input type="file" id='link-patrocinio'>
+                    </div>
+
+                    <div class="row">
+                        <span>Valor Total a arrecadar</span>
+                        <input id='total-arrecadar'>
+                    </div>
+
+                    <div class="row">
+                        <span>Valor a arrecadado</span>
+                        <input id='valor-arrecadado'>
+                    </div>
+
+                    <div class="row">
+                        <span>Porcentagem Arrecadada</span>
+                        <input id='porcentagem-arrecadada'>
+                    </div>
+
+                    <button type='submit'>Cadastrar</button>
+
                 </div>
-
-                <div class="row">
-                    <span>Nome da Campanha</span>
-                    <input id='nome-campanha'>
-                </div>
-
-                <div class="row">
-                    <span>Descrição</span>
-                    <input id='descricao-campanha'>
-                </div>
-
-                <div class="row">
-                    <span>Link da Imagem</span>
-                    <input type="file" id='link-imagem'>
-                </div>
-
-                <div class="row">
-                    <span>Imagem Patrocinio</span>
-                    <input type="file" id='img-patrocinio'>
-                </div>
-
-                <div class="row">
-                    <span>Link Patrocinio</span>
-                    <input id='link-patrocinio'>
-                </div>
-
-                <div class="row">
-                    <span>Valor Total a arrecadar</span>
-                    <input id='total-arrecadar'>
-                </div>
-
-                <div class="row">
-                    <span>Valor a arrecadado</span>
-                    <input id='valor-arrecadado'>
-                </div>
-
-                <div class="row">
-                    <span>Porcentagem Arrecadada</span>
-                    <input id='porcentagem-arrecadada'>
-                </div>
-
-                <button type='submit'>Cadastrar</button>
-
             </div>
             
         </div>
