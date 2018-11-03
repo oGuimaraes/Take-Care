@@ -46,10 +46,6 @@ p {
     display: flex;
     flex-direction: column;
 
-    background-image: url("../img/main-picture.png");
-    background-size: cover;
-    height: 100vh;
-
     .cabecalho {
         display: flex;
         align-items: center;
@@ -58,17 +54,25 @@ p {
         margin: 10px 0;
 
 
-        height: 60px;
+        height: 90px;
     
         a {
             margin-left: 0;
         }
         .imglogo {
 
-            width: 100px;
+            width: 80px;
             margin: 15px 0 0 0;
         }
     }
+
+}
+
+.main-picture {
+
+    background-image: url("../img/main-picture.png");
+    background-size: cover;
+    height: 100vh;
 
     .titulo {
         font-family: 'Dosis';
@@ -89,6 +93,7 @@ p {
         }
 
     }
+
 
 }
 
@@ -121,6 +126,21 @@ p {
     .sair:hover{
         color:orangered;
     }
+
+}
+
+.formulario-cadastro {
+    background-color: #d9e0e4;
+    width: 100%;
+
+    .row {
+        width: 100%;
+
+        span, select, input {
+            width: 100%;
+        }
+    }
+
 
 }
 
