@@ -1,6 +1,6 @@
 axios.get('js/database.json')
     .then(function (response) {
-        console.log(response.data.results);
+        console.log(respons.data.results);
 
         var results = response.data.results;
         var imagem;

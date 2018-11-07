@@ -10,7 +10,6 @@
     <meta name="keywords" content="">
     <link rel="stylesheet/less" type="text/css" href="css/style.less">
     <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.7.1/less.min.js"></script>
-
     <title>Take Care</title>
 </head>
 
@@ -59,42 +58,53 @@
 
                     <div class="row">
                         <span>Escreva uma breve descrição:</span>
-                        <input id='descricao-campanha'>
+                        <textarea type="text" cols="20" rows="3" id='descricao-campanha'></textarea>
                     </div>
 
                     <div class="row">
-                        <span>Link da Imagem</span>
-                        <input type="file" id='link-imagem'>
+                        <span>Escolha uma imagem para a campanha</span>
+                        <label for='link-imagem'>Selecione em seu computador</label>
+                        <input class="input-file" type="file" id='link-imagem'>
                     </div>
 
                     <div class="row">
-                        <span>Imagem Patrocinio</span>
-                        <input type="file" id='img-patrocinio'>
+                        <span>Escolha um Patrocinador</span>
+                        <label for='img-patrocinio'>Selecione em seu computador</label>
+                        <input class="input-file" type="file" id='img-patrocinio'>
                     </div>
 
                     <div class="row">
-                        <span>Link Patrocinio</span>
-                        <input type="file" id='link-patrocinio'>
+                        <span>Qual o site do seu patrocinador?</span>
+                        <input id='link-patrocinio'>
                     </div>
 
                     <div class="row">
-                        <span>Valor Total a arrecadar</span>
-                        <input id='total-arrecadar'>
+                        <div>
+                            <span>Valor Total a arrecadar</span>
+                            <span>R$</span>
+                            <input class="input-money" id='total-arrecadar'>
+                        </div>
                     </div>
 
                     <div class="row">
-                        <span>Valor a arrecadado</span>
-                        <input id='valor-arrecadado'>
+                        <div>
+                            <span>Valor a arrecadado</span>
+                            <span>R$</span>
+                            <input class="input-money" id='valor-arrecadado'>
+                        </div>
                     </div>
 
                     <div class="row">
-                        <span>Porcentagem Arrecadada</span>
-                        <input id='porcentagem-arrecadada'>
+                        <div>
+                            <span>Porcentagem Arrecadada</span>
+                            <span>R$</span>
+                            <input class="input-money" id='porcentagem-arrecadada'>
+                        </div>
                     </div>
 
                     <button type='submit'>Cadastrar</button>
 
-                </div>
+                </form>
             </div>
             
         </div>

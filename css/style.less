@@ -151,28 +151,107 @@ p {
 
     .titulo{
         width: 100%;
+        color: #6596cc;
+        text-shadow: 1px 1px #5580ad;
+        font-size: px;
+        margin: 10px auto;
+    }
+
+    select {
+        .input-style;
+        .box-shadow;
+        font-size: 16px;
+        max-width: 200px;
+        text-align: center;
+        border: 1px solid #797979;
+    }
+
+    select:focus {
+        color: #495057;
+        background-color: #fff;
+        border-color: #80bdff;
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
     }
      
 
-    .row{
+    .row {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
         margin: 10px 10px;
         width: 100%;
         
-        .item{
-        }
-
         span{
             width: 100%;
+            font-weight: 600;
         } select, input {
             width: 60%;
         }
 
-        input{
-            height: 60px;
+        textarea{
+            .input-style;
+            .box-shadow;
+            resize: none;
+            border: 1px solid #797979;
+            padding: 3px 10px;
+            font-family: 'Arial';
+            font-weight: 300;
             border-radius: 6px;
+            height: 70px;
+            width: 400px;
+            font-size: 16px;
         }
+
+        input{
+            .input-style;
+            .box-shadow;
+            border: 1px solid #797979;
+            border-radius: 6px;
+            width: 400px;
+            font-size: 16px;
+        }
+
+        .input-file {
+            border: none;
+        }
+
+        input[type='file'] {
+            display: none;
+        }
+        
+        .input-money{
+            width: 100px;
+        }
+        label {
+            background-color: #3498db;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            margin: 10px;
+            padding: 6px 20px
+        }
+
+
+        #descricao-campanha{
+            height: 80px;
+        }
+
+    }
+
+    .row:last-child{
+        flex-direction: row;
+    }
+
+    button{
+        font-size: 18px;
+        background-color: #30e02b;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+        margin: 10px;
+        padding: 6px 20px;
     }
 
 
