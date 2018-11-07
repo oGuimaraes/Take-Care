@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet/less" type="text/css" href="css/style.less">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.7.1/less.min.js"></script>
+
+    <title>Take Care</title>
+</head>
+
+<body>
+    <header>
+        <div class="principal">
+            <div class="cabecalho container">
+                <a href="#"><img class="imglogo" src="img/logo.png"></a>
+
+                <!--Painel de login-->
+                <div id="login" class="painel-login">
+                    <input name="email" placeholder="Email" id="email_value">
+                    <input type="password" placeholder="Password" name="pass" id="pass_value">
+                    <button onclick="Login()">Login</button>
+                </div>
+
+                <!--Usuário logado-->
+                <div id="logged" class="user-badge">
+                    <img class="picture" src="img/profile-picture.jpg">
+                    <span id="user_fullname">nome</span>
+                    <span>/</span>
+                    <span class="sair"><a onclick="Logout()">Sair</a></span>
+                </div>
+            </div>
+
+            <div class="box-criar-campanha">
+                <form id='form-cadastro' class='formulario-cadastro'>
+                    <h2 class="titulo">Criação de Campanha</h2>
+                    <div class="row">
+                        <span>Categorize o tipo de sua campanha: </span>
+                        <select id="tipo-campanha">
+                            <option disabled selected value="todos">Escolha por tipo</option>
+                            <option value="alimento">Alimento</option>
+                            <option value="animais">Animais</option>
+                            <option value="criancas">Criancas</option>
+                            <option value="ecologia">Ecologia</option>
+                            <option value="idosos">Idosos</option>
+                            <option value="materiais">Materiais</option>
+                        </select>
+                    </div>
+
+                    <div class="row">
+                        <span>Dê um nome a sua campanha:</span>
+                        <input id='nome-campanha'>
+                    </div>
+
+                    <div class="row">
+                        <span>Escreva uma breve descrição:</span>
+                        <input id='descricao-campanha'>
+                    </div>
+
+                    <div class="row">
+                        <span>Link da Imagem</span>
+                        <input type="file" id='link-imagem'>
+                    </div>
+
+                    <div class="row">
+                        <span>Imagem Patrocinio</span>
+                        <input type="file" id='img-patrocinio'>
+                    </div>
+
+                    <div class="row">
+                        <span>Link Patrocinio</span>
+                        <input type="file" id='link-patrocinio'>
+                    </div>
+
+                    <div class="row">
+                        <span>Valor Total a arrecadar</span>
+                        <input id='total-arrecadar'>
+                    </div>
+
+                    <div class="row">
+                        <span>Valor a arrecadado</span>
+                        <input id='valor-arrecadado'>
+                    </div>
+
+                    <div class="row">
+                        <span>Porcentagem Arrecadada</span>
+                        <input id='porcentagem-arrecadada'>
+                    </div>
+
+                    <button type='submit'>Cadastrar</button>
+
+                </div>
+            </div>
+            
+        </div>
+    </header>
+</body>
+
+</body>
+<script src="js/create-campaign.js"></script>
+<!--Firebase initial code / DO NOT PUT ANITHING ABOVE-->
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBPJIjBjhygqrbani2lxiGhXnOp_tiBToE",
+    authDomain: "take-care-puc.firebaseapp.com",
+    databaseURL: "https://take-care-puc.firebaseio.com",
+    projectId: "take-care-puc",
+    storageBucket: "take-care-puc.appspot.com",
+    messagingSenderId: "820863118877"
+  };
+  firebase.initializeApp(config);
+  var db = firebase.firestore();
+</script>
+
+<!--SCRIPTS DOWN BELLOW-->
+
+<script> // Checking if the user is logged.
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      // User is signed in.
+        document.getElementById("logged").style.display = "flex";
+        document.getElementById("login").style.display = "none";
+
+        var userNow = firebase.auth().currentUser;
+
+        if(userNow != null){
+            var emailId = userNow.email;
+
+            document.getElementById("user_fullname").innerHTML = emailId;
+        }
+
+    } else {
+      // No user is signed in.
+        document.getElementById("logged").style.display = "none";
+        document.getElementById("login").style.display = "flex";
+    }
+  });
+</script>
+<script type="text/javascript" src="js/auth.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>

@@ -23,7 +23,16 @@ p {
     padding: 10px 120px;
     font-family: Roboto;
     color: #747474;
+    background-color: #F3F3F3;
+}
 
+.box-criar-campanha {
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 220px;
+    font-family: Roboto;
+    color: #747474;
+    background-color: #F3F3F3;
 }
 
 .input-style() {
@@ -46,29 +55,31 @@ p {
     display: flex;
     flex-direction: column;
 
-    background-image: url("../img/main-picture.png");
-    background-size: cover;
-    height: 100vh;
-
     .cabecalho {
         display: flex;
         align-items: center;
 
         width: 100%;
-        margin: 10px 0;
 
-
-        height: 60px;
+        height: 90px;
     
         a {
             margin-left: 0;
         }
         .imglogo {
 
-            width: 100px;
+            width: 80px;
             margin: 15px 0 0 0;
         }
     }
+
+}
+
+.main-picture {
+
+    background-image: url("../img/main-picture.png");
+    background-size: cover;
+    height: 100vh;
 
     .titulo {
         font-family: 'Dosis';
@@ -89,6 +100,7 @@ p {
         }
 
     }
+
 
 }
 
@@ -121,6 +133,48 @@ p {
     .sair:hover{
         color:orangered;
     }
+
+}
+
+.formulario-cadastro {
+    
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.1);
+    background-color: #FFF;
+    border-radius: 15px;
+    justify-content: center;
+    text-align: center;
+    padding: 30px 0px;
+
+    .titulo{
+        width: 100%;
+    }
+     
+
+    .row{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 10px 10px;
+        width: 100%;
+        
+        .item{
+        }
+
+        span{
+            width: 100%;
+        } select, input {
+            width: 60%;
+        }
+
+        input{
+            height: 60px;
+            border-radius: 6px;
+        }
+    }
+
 
 }
 
