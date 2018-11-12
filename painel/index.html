@@ -199,7 +199,7 @@
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="#">Mensagem</a>
                                     <a class="dropdown-item" href="#">Configurações</a>
-                                    <a class="dropdown-item" href="#">Sair</a>
+                                    <a class="dropdown-item" href="#" onClick="Logout()">Sair</a>
                                 </div>
                             </div>
                         </div>
@@ -216,32 +216,17 @@
                         <div class="horizontal-menu">
                             <nav>
                                 <ul id="nav_menu">
+                                    <li class="active"><a href="index.html"><i class="ti-dashboard"></i><span>Início</span></a></li>
                                     <li>
-                                        <a href="javascript:void(0)"><i class="ti-dashboard"></i><span>dashboard</span></a>
+                                        <a href="javascript:void(0)"><i class="ti-layout-sidebar-left"></i><span>Campanhas</span></a>
                                         <ul class="submenu">
-                                            <li><a href="index.html">ICO dashboard</a></li>
-                                            <li><a href="index2.html">Ecommerce dashboard</a></li>
-                                            <li><a href="index3.html">SEO dashboard</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="active">
-                                        <a href="javascript:void(0)"><i class="ti-layout-sidebar-left"></i><span>Sidebar
-                                                Types</span></a>
-                                        <ul class="submenu">
-                                            <li><a href="index.html">Left Sidebar</a></li>
-                                            <li class="active"><a href="index3-horizontalmenu.html">Horizontal Sidebar</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)"><i class="ti-pie-chart"></i><span>Charts</span></a>
-                                        <ul class="submenu">
-                                            <li><a href="barchart.html">bar chart</a></li>
-                                            <li><a href="linechart.html">line Chart</a></li>
-                                            <li><a href="piechart.html">pie chart</a></li>
+                                            <li><a href="#">Criar Campanha</a></li>
+                                            <li><a href="#">Minhas campanhas</a></li>
+                                            <li><a href="#">Todas as campanhas</a></li>
                                         </ul>
                                     </li>
                                     <li class="mega-menu">
-                                        <a href="javascript:void(0)"><i class="ti-palette"></i><span>UI Features</span></a>
+                                        <a href="javascript:void(0)"><i class="ti-palette"></i><span>PlaceHolder</span></a>
                                         <ul class="submenu">
                                             <li><a href="accordion.html">Accordion</a></li>
                                             <li><a href="alert.html">Alert</a></li>
@@ -262,42 +247,23 @@
                                             <li><a href="grid.html">grid system</a></li>
                                         </ul>
                                     </li>
-                                    <li class="mega-menu">
-                                        <a href="javascript:void(0)"><i class="ti-layers-alt"></i> <span>Pages</span></a>
-                                        <ul class="submenu">
-                                            <li><a href="login.html">Login</a></li>
-                                            <li><a href="login2.html">Login 2</a></li>
-                                            <li><a href="login3.html">Login 3</a></li>
-                                            <li><a href="register.html">Register</a></li>
-                                            <li><a href="register2.html">Register 2</a></li>
-                                            <li><a href="register3.html">Register 3</a></li>
-                                            <li><a href="register4.html">Register 4</a></li>
-                                            <li><a href="screenlock.html">Lock Screen</a></li>
-                                            <li><a href="screenlock2.html">Lock Screen 2</a></li>
-                                            <li><a href="reset-pass.html">reset password</a></li>
-                                            <li><a href="pricing.html">Pricing</a></li>
-                                            <li><a href="404.html">Error 404</a></li>
-                                            <li><a href="500.html">Error 500</a></li>
-                                            <li><a href="invoice.html"><i class="ti-receipt"></i> <span>Invoice Summary</span></a></li>
-                                        </ul>
-                                    </li>
                                     <li>
-                                        <a href="javascript:void(0)"><i class="ti-slice"></i><span>icons</span></a>
+                                        <a href="javascript:void(0)"><i class="ti-slice"></i><span>Pagamento</span></a>
                                         <ul class="submenu">
-                                            <li><a href="fontawesome.html">fontawesome icons</a></li>
-                                            <li><a href="themify.html">themify icons</a></li>
+                                            <li><a href="#">Adicionar metodo de pagamento</a></li>
+                                            <li><a href="#">Gerenciar metodos de pagamento</a></li>
                                         </ul>
                                     </li>
                                     <li>
                                         <a href="javascript:void(0)"><i class="fa fa-table"></i>
-                                            <span>Tables</span></a>
+                                            <span>Suporte</span></a>
                                         <ul class="submenu">
-                                            <li><a href="table-basic.html">basic table</a></li>
-                                            <li><a href="table-layout.html">table layout</a></li>
-                                            <li><a href="datatable.html">datatable</a></li>
+                                            <li><a href="#">Perguntas Frequentes</a></li>
+                                            <li><a href="#">Tutoriais</a></li>
+                                            <li><a href="#">Contato</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="maps.html"><i class="ti-map-alt"></i> <span>maps</span></a></li>
+                                    <li><a href="#"><i class="ti-map-alt"></i> <span>Patrocinadores</span></a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -330,8 +296,8 @@
                                 <div class="card">
                                     <div class="seo-fact sbg1">
                                         <div class="p-4 d-flex justify-content-between align-items-center">
-                                            <div class="seofct-icon"><i class="ti-thumb-up"></i> Curtidas</div>
-                                            <h2>2,315</h2>
+                                            <div class="seofct-icon"><i class="ti-thumb-up"></i> Doações</div>
+                                            <h2 id="qnt_doadores">1,784</h2>
                                         </div>
                                         <canvas id="seolinechart1" height="50"></canvas>
                                     </div>
@@ -341,8 +307,8 @@
                                 <div class="card">
                                     <div class="seo-fact sbg2">
                                         <div class="p-4 d-flex justify-content-between align-items-center">
-                                            <div class="seofct-icon"><i class="ti-share"></i> Share</div>
-                                            <h2>3,984</h2>
+                                            <div class="seofct-icon"><i class="ti-share"></i> Total Arrecadado</div>
+                                            <h2 id="total_arrecadado_geral">R$ 3.984,00</h2>
                                         </div>
                                         <canvas id="seolinechart2" height="50"></canvas>
                                     </div>
@@ -353,7 +319,7 @@
                                     <div
                                      class="seo-fact sbg3">
                                         <div class="p-4 d-flex justify-content-between align-items-center">
-                                            <div class="seofct-icon">Impressions</div>
+                                            <div class="seofct-icon">Doadores</div>
                                             <canvas id="seolinechart3" height="60"></canvas>
                                         </div>
                                     </div>
@@ -363,7 +329,7 @@
                                 <div class="card">
                                     <div class="seo-fact sbg4">
                                         <div class="p-4 d-flex justify-content-between align-items-center">
-                                            <div class="seofct-icon">New Users</div>
+                                            <div class="seofct-icon">??</div>
                                             <canvas id="seolinechart4" height="60"></canvas>
                                         </div>
                                     </div>
@@ -372,7 +338,7 @@
                         </div>
                     </div>
                     <!-- seo fact area end -->
-                    <!-- Social Campain area start -->
+                    <!-- Social Campain area start --
                     <div class="col-lg-4 mt-5">
                         <div class="card">
                             <div class="card-body pb-0">
@@ -381,28 +347,28 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Social Campain area end -->
-                    <!-- Statistics area start -->
-                    <div class="col-lg-8 mt-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="header-title">User Statistics</h4>
-                                <div id="user-statistics"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Statistics area end -->
+                    !-- Social Campain area end -->
                     <!-- Advertising area start -->
-                    <div class="col-lg-4 mt-5">
+                    <div class="col-lg-4 mt-3">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="header-title">Advertising & Marketing</h4>
+                                <h4 class="header-title">Doações por campanha</h4>
                                 <canvas id="seolinechart8" height="233"></canvas>
                             </div>
                         </div>
                     </div>
                     <!-- Advertising area end -->
-                    <!-- sales area start -->
+                    <!-- Statistics area start -->
+                    <div class="col-lg-8 mt-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="header-title">Doações por mês</h4>
+                                <div id="user-statistics"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Statistics area end -->
+                    <!-- sales area start --
                     <div class="col-xl-8 col-lg-8 mt-5">
                         <div class="card">
                             <div class="card-body">
@@ -411,94 +377,30 @@
                             </div>
                         </div>
                     </div>
-                    <!-- sales area end -->
-                    <!-- timeline area start -->
-                    <div class="col-xl-4 col-lg-4 mt-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="header-title">Timeline</h4>
-                                <div class="timeline-area">
-                                    <div class="timeline-task">
-                                        <div class="icon bg1">
-                                            <i class="fa fa-envelope"></i>
-                                        </div>
-                                        <div class="tm-title">
-                                            <h4>Rashed sent you an email</h4>
-                                            <span class="time"><i class="ti-time"></i>09:35</span>
-                                        </div>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse distinctio itaque at.
-                                        </p>
-                                    </div>
-                                    <div class="timeline-task">
-                                        <div class="icon bg2">
-                                            <i class="fa fa-exclamation-triangle"></i>
-                                        </div>
-                                        <div class="tm-title">
-                                            <h4>Rashed sent you an email</h4>
-                                            <span class="time"><i class="ti-time"></i>09:35</span>
-                                        </div>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse distinctio itaque at.
-                                        </p>
-                                    </div>
-                                    <div class="timeline-task">
-                                        <div class="icon bg2">
-                                            <i class="fa fa-exclamation-triangle"></i>
-                                        </div>
-                                        <div class="tm-title">
-                                            <h4>Rashed sent you an email</h4>
-                                            <span class="time"><i class="ti-time"></i>09:35</span>
-                                        </div>
-                                    </div>
-                                    <div class="timeline-task">
-                                        <div class="icon bg3">
-                                            <i class="fa fa-bomb"></i>
-                                        </div>
-                                        <div class="tm-title">
-                                            <h4>Rashed sent you an email</h4>
-                                            <span class="time"><i class="ti-time"></i>09:35</span>
-                                        </div>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse distinctio itaque at.
-                                        </p>
-                                    </div>
-                                    <div class="timeline-task">
-                                        <div class="icon bg3">
-                                            <i class="ti-signal"></i>
-                                        </div>
-                                        <div class="tm-title">
-                                            <h4>Rashed sent you an email</h4>
-                                            <span class="time"><i class="ti-time"></i>09:35</span>
-                                        </div>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse distinctio itaque at.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- timeline area end -->
+                    !-- sales area end -->
                     <!-- map area start -->
-                    <div class="col-lg-5 mt-5">
+                    <div class="col-lg-4 mt-5">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="header-title">Marketing Area</h4>
+                                <h4 class="header-title">Doações por região</h4>
                                 <div id="seomap"></div>
                             </div>
                         </div>
                     </div>
                     <!-- map area end -->
                     <!-- testimonial area start -->
-                    <div class="col-lg-7 mt-5">
+                    <div class="col-lg-12 mt-7">
                         <div class="card">
                             <div class="card-body bg1">
-                                <h4 class="header-title text-white">Client Feadback</h4>
+                                <h4 class="header-title text-white">Comentários de doações</h4>
                                 <div class="testimonial-carousel owl-carousel">
                                     <div class="tst-item">
                                         <div class="tstu-img">
                                             <img src="assets/images/team/team-author1.jpg" alt="author image">
                                         </div>
                                         <div class="tstu-content">
-                                            <h4 class="tstu-name">Abel Franecki</h4>
-                                            <span class="profsn">Designer</span>
+                                            <h4 class="tstu-name">Jose da silva</h4>
+                                            <span class="profsn">R$5,00</span>
                                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae laborum ut nihil numquam a aliquam alias necessitatibus ipsa soluta quam!</p>
                                         </div>
                                     </div>
@@ -507,8 +409,8 @@
                                             <img src="assets/images/team/team-author2.jpg" alt="author image">
                                         </div>
                                         <div class="tstu-content">
-                                            <h4 class="tstu-name">Abel Franecki</h4>
-                                            <span class="profsn">Designer</span>
+                                            <h4 class="tstu-name">Fulano beltrano</h4>
+                                            <span class="profsn">R$52,00</span>
                                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae laborum ut nihil numquam a aliquam alias necessitatibus ipsa soluta quam!</p>
                                         </div>
                                     </div>
@@ -517,9 +419,9 @@
                                             <img src="assets/images/team/team-author3.jpg" alt="author image">
                                         </div>
                                         <div class="tstu-content">
-                                            <h4 class="tstu-name">Abel Franecki</h4>
-                                            <span class="profsn">Designer</span>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae laborum ut nihil numquam a aliquam alias necessitatibus ipsa soluta quam!</p>
+                                            <h4 class="tstu-name">Sistema</h4>
+                                            <span class="profsn">R$35,00</span>
+                                            <p>Sistema de comentários será adicionado em breve.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -534,7 +436,7 @@
         <!-- footer area start-->
         <footer>
             <div class="footer-area">
-                <p>© Copyright 2018. All right reserved. Template by <a href="https://colorlib.com/wp/">Colorlib</a>.</p>
+                <p>© Copyright 2018 TakeCare. Todos os direitos reservados. Design por: <a href="https://colorlib.com/wp/">Colorlib</a>.</p>
             </div>
         </footer>
         <!-- footer area end-->

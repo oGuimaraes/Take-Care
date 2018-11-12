@@ -93,7 +93,8 @@ function createUserOnDb(nameInput, emailInput, celInput){
   db.collection("users").add({
       name: nameInput,
       email: emailInput,
-      telefone: celInput
+      telefone: celInput,
+      role: "doador"
     })
     .then(function(docRef) {
       console.log("Documento escrito com a ID: ", docRef.id);
