@@ -37,42 +37,47 @@
     <div class="login-area login-bg">
         <div class="container">
             <div class="login-box ptb--100">
-                <form>
+                <form action="#" onsubmit="return false">
                     <div class="login-form-head">
                         <h4>Cadastre-se</h4>
                         <p>Cadastre-se para doar.</p>
                     </div>
                     <div class="login-form-body">
                         <div class="form-gp">
-                            <label for="exampleInputName1">Nome completo</label>
-                            <input type="text" id="exampleInputName1">
+                            <label for="nameInput">Nome completo</label>
+                            <input type="text" id="nameInput">
                             <i class="ti-user"></i>
                         </div>
                         <div class="form-gp">
-                            <label for="exampleInputEmail1">Email</label>
-                            <input type="email" id="exampleInputEmail1">
+                            <label for="celInput">Celular</label>
+                            <input type="tel" id="celInput">
+                            <i class="ti-user"></i>
+                        </div>
+                        <div class="form-gp">
+                            <label for="emailInput">Email</label>
+                            <input type="email" id="emailInput">
                             <i class="ti-email"></i>
                         </div>
                         <div class="form-gp">
-                            <label for="exampleInputPassword1">Senha</label>
-                            <input type="password" id="exampleInputPassword1">
+                            <label for="passInput">Senha</label>
+                            <input type="password" id="passInput">
                             <i class="ti-lock"></i>
                         </div>
                         <div class="form-gp">
-                            <label for="exampleInputPassword2">Repita a senha</label>
-                            <input type="password" id="exampleInputPassword2">
+                            <label for="passInput2">Repita a senha</label>
+                            <input type="password" id="passInput2">
                             <i class="ti-lock"></i>
                         </div>
                         <div class="submit-btn-area">
-                            <button id="form_submit" type="submit">Cadastrar <i class="ti-arrow-right"></i></button>
-                            <div class="login-other row mt-4">
+                            <button id="form_submit" onClick="checkForm()">Cadastrar <i class="ti-arrow-right"></i></button>
+                            <!--<div class="login-other row mt-4">
                                 <div class="col-6">
                                     <a class="fb-login" href="#">Entre com <i class="fa fa-facebook"></i></a>
                                 </div>
                                 <div class="col-6">
                                     <a class="google-login" href="#">Entre com <i class="fa fa-google"></i></a>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
                         <div class="form-footer text-center mt-5">
                             <p class="text-muted">Já tem uma conta? <a href="login.html">Entrar</a></p>
@@ -83,7 +88,37 @@
         </div>
     </div>
     <!-- login area end -->
+    <!--Firebase initial code / DO NOT PUT ANITHING ABOVE-->
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBPJIjBjhygqrbani2lxiGhXnOp_tiBToE",
+    authDomain: "take-care-puc.firebaseapp.com",
+    databaseURL: "https://take-care-puc.firebaseio.com",
+    projectId: "take-care-puc",
+    storageBucket: "take-care-puc.appspot.com",
+    messagingSenderId: "820863118877"
+  };
+  firebase.initializeApp(config);
+</script>
 
+<!--SCRIPTS DOWN BELLOW-->
+
+<script> // Checking if the user is logged.
+var authListener = firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      // User is signed in.
+      document.location = "index.html";
+
+    } else {
+      // No user is signed in.
+      console.log("listener is working");
+    }
+  });
+</script>
+<script type="text/javascript" src="../js/auth.js"></script>
     <!-- jquery latest version -->
     <script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
     <!-- bootstrap 4 js -->
