@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Painel | Take Care</title>
+    <title>Minhas Campanhas | Take Care</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="assets/images/icon/favicon.ico">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -199,7 +199,7 @@
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="#">Mensagem</a>
                                     <a class="dropdown-item" href="#">Configurações</a>
-                                    <a class="dropdown-item" href="#">Sair</a>
+                                    <a class="dropdown-item" href="#" onClick="Logout()">Sair</a>
                                 </div>
                             </div>
                         </div>
@@ -216,32 +216,17 @@
                         <div class="horizontal-menu">
                             <nav>
                                 <ul id="nav_menu">
+                                    <li class="active"><a href="index.html"><i class="ti-dashboard"></i><span>Início</span></a></li>
                                     <li>
-                                        <a href="javascript:void(0)"><i class="ti-dashboard"></i><span>dashboard</span></a>
+                                        <a href="javascript:void(0)"><i class="ti-layout-sidebar-left"></i><span>Campanhas</span></a>
                                         <ul class="submenu">
-                                            <li><a href="index.html">ICO dashboard</a></li>
-                                            <li><a href="index2.html">Ecommerce dashboard</a></li>
-                                            <li><a href="index3.html">SEO dashboard</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="active">
-                                        <a href="javascript:void(0)"><i class="ti-layout-sidebar-left"></i><span>Sidebar
-                                                Types</span></a>
-                                        <ul class="submenu">
-                                            <li><a href="index.html">Left Sidebar</a></li>
-                                            <li class="active"><a href="index3-horizontalmenu.html">Horizontal Sidebar</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)"><i class="ti-pie-chart"></i><span>Charts</span></a>
-                                        <ul class="submenu">
-                                            <li><a href="barchart.html">bar chart</a></li>
-                                            <li><a href="linechart.html">line Chart</a></li>
-                                            <li><a href="piechart.html">pie chart</a></li>
+                                            <li><a href="#">Criar Campanha</a></li>
+                                            <li><a href="minhas-campanhas.html">Minhas campanhas</a></li>
+                                            <li><a href="#">Todas as campanhas</a></li>
                                         </ul>
                                     </li>
                                     <li class="mega-menu">
-                                        <a href="javascript:void(0)"><i class="ti-palette"></i><span>UI Features</span></a>
+                                        <a href="javascript:void(0)"><i class="ti-palette"></i><span>PlaceHolder</span></a>
                                         <ul class="submenu">
                                             <li><a href="accordion.html">Accordion</a></li>
                                             <li><a href="alert.html">Alert</a></li>
@@ -262,42 +247,23 @@
                                             <li><a href="grid.html">grid system</a></li>
                                         </ul>
                                     </li>
-                                    <li class="mega-menu">
-                                        <a href="javascript:void(0)"><i class="ti-layers-alt"></i> <span>Pages</span></a>
-                                        <ul class="submenu">
-                                            <li><a href="login.html">Login</a></li>
-                                            <li><a href="login2.html">Login 2</a></li>
-                                            <li><a href="login3.html">Login 3</a></li>
-                                            <li><a href="register.html">Register</a></li>
-                                            <li><a href="register2.html">Register 2</a></li>
-                                            <li><a href="register3.html">Register 3</a></li>
-                                            <li><a href="register4.html">Register 4</a></li>
-                                            <li><a href="screenlock.html">Lock Screen</a></li>
-                                            <li><a href="screenlock2.html">Lock Screen 2</a></li>
-                                            <li><a href="reset-pass.html">reset password</a></li>
-                                            <li><a href="pricing.html">Pricing</a></li>
-                                            <li><a href="404.html">Error 404</a></li>
-                                            <li><a href="500.html">Error 500</a></li>
-                                            <li><a href="invoice.html"><i class="ti-receipt"></i> <span>Invoice Summary</span></a></li>
-                                        </ul>
-                                    </li>
                                     <li>
-                                        <a href="javascript:void(0)"><i class="ti-slice"></i><span>icons</span></a>
+                                        <a href="javascript:void(0)"><i class="ti-slice"></i><span>Pagamento</span></a>
                                         <ul class="submenu">
-                                            <li><a href="fontawesome.html">fontawesome icons</a></li>
-                                            <li><a href="themify.html">themify icons</a></li>
+                                            <li><a href="#">Adicionar metodo de pagamento</a></li>
+                                            <li><a href="#">Gerenciar metodos de pagamento</a></li>
                                         </ul>
                                     </li>
                                     <li>
                                         <a href="javascript:void(0)"><i class="fa fa-table"></i>
-                                            <span>Tables</span></a>
+                                            <span>Suporte</span></a>
                                         <ul class="submenu">
-                                            <li><a href="table-basic.html">basic table</a></li>
-                                            <li><a href="table-layout.html">table layout</a></li>
-                                            <li><a href="datatable.html">datatable</a></li>
+                                            <li><a href="#">Perguntas Frequentes</a></li>
+                                            <li><a href="#">Tutoriais</a></li>
+                                            <li><a href="#">Contato</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="maps.html"><i class="ti-map-alt"></i> <span>maps</span></a></li>
+                                    <li><a href="#"><i class="ti-map-alt"></i> <span>Patrocinadores</span></a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -374,7 +340,7 @@
         <!-- footer area start-->
         <footer>
             <div class="footer-area">
-                <p>© Copyright 2018 Take Care. Todos os direitos reservados. Design por <a href="https://colorlib.com/wp/">Colorlib</a>.</p>
+                <p>© Copyright 2018 TakeCare. Todos os direitos reservados. Design por: <a href="https://colorlib.com/wp/">Colorlib</a>.</p>
             </div>
         </footer>
         <!-- footer area end-->
