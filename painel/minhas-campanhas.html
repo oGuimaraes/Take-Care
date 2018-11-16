@@ -220,7 +220,8 @@
                                     <li class="active">
                                         <a href="javascript:void(0)"><i class="ti-layout-sidebar-left"></i><span>Campanhas</span></a>
                                         <ul class="submenu">
-                                            <li><a href="minhas-campanhas.html#criarcampanha">Criar Campanha</a></li>
+                                            <li><a href="minhas-campanhas.html#criarcampanha" data-toggle="modal"
+                                                    data-target="#criarcampanha">Criar Campanha</a></li>
                                             <li class="active"><a href="minhas-campanhas.html">Minhas campanhas</a></li>
                                             <li><a href="#">Todas as campanhas</a></li>
                                         </ul>
@@ -295,17 +296,102 @@
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                    <h5 class="modal-title" id="exampleModalLabel">Criar campanha</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    ...
+                                    <form action="#" onsubmit="return false">
+                                        <div class="login-form-body">
+
+                                            <div class="form-group">
+                                                <label class="col-form-label">Escolha uma categoria</label>
+                                                <select class="custom-select">
+                                                    <option disabled selected="selected">Categorias</option>
+                                                    <option value="alimentos">Alimentos</option>
+                                                    <option value="animais">Animais</option>
+                                                    <option value="criancas">Crianças</option>
+                                                    <option value="ecologia">Ecologia</option>
+                                                    <option value="idosos">Idosos</option>
+                                                    <option value="materiais">Materiais</option>
+                                                    <option value="outros">Outros</option>
+                                                </select>
+                                                <small class="form-text text-muted">Em qual categoria sua campanha se
+                                                    encaixa?</small>
+                                            </div>
+
+                                            <label for="nameInput">Nome da campanha</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" id="nameInput" aria-describedby="basic-addon3">
+                                            </div>
+                                            <small class="form-text text-muted">O nome da sua campanha</small>
+                                            <div class="mb-3"></div>
+
+                                            <label for="descInput">Descrição da campanha</label>
+                                            <div class="input-group">
+                                                    <textarea class="form-control" id="descInput"></textarea>
+                                            </div>
+                                            <small class="form-text text-muted">Um breve resumo sobre a sua campanha</small>
+                                            <div class="mb-3"></div>
+                                            
+                                            <label for="bannerInput">Seu banner</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">Imagem</span>
+                                                </div>
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="bannerInput">
+                                                    <label class="custom-file-label" for="bannerInput">Banner da
+                                                        campanha</label>
+                                                </div>
+                                            </div>
+                                            <small class="form-text text-muted">Escolha uma imagem para ser o
+                                                    banner da sua campanha.</small>
+                                            <div class="mb-3"></div>
+
+                                            <label for="logoInput">Logo do patrocinador</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">Imagem</span>
+                                                </div>
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="logoInput">
+                                                    <label class="custom-file-label" for="logoInput">Logo do patrocinador</label>
+                                                </div>
+                                            </div>
+                                            <small class="form-text text-muted">Envie a logo do seu patrocinador</small>
+                                            <div class="mb-3"></div>
+
+                                            
+                                            <label for="basic-url">Site do seu patrocinador</label>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon3">https://</span>
+                                                </div>
+                                                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                                            </div>
+                                            <small class="form-text text-muted">O site completo do seu patrocinador</small>
+                                            <div class="mb-3"></div>
+
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">R$</span>
+                                                </div>
+                                                <input type="text" class="form-control" aria-label="Meta de arrecadação">
+                                            </div>
+                                            <small class="form-text text-muted">Valor em Reais (BRL).</small>
+
+                                            <div class="submit-btn-area">
+                                                <button id="form_submit" onClick="null">Criar campanha <i class="ti-arrow-right"></i></button>
+                                            </div>
+
+                                        </div>
+                                    </form>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                    <!--button type="button" class="btn btn-primary">Criar campanha</button-->
                                 </div>
                             </div>
                         </div>
