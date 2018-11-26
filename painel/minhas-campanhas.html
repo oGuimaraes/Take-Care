@@ -302,12 +302,12 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="#" onsubmit="return false">
+                                    <form id="form-cadastro" action="#" onsubmit="return false">
                                         <div class="login-form-body">
 
                                             <div class="form-group">
-                                                <label class="col-form-label">Escolha uma categoria</label>
-                                                <select class="custom-select">
+                                                <label for="selectBox" class="col-form-label">Escolha uma categoria*</label>
+                                                <select id="selectBox" required class="custom-select">
                                                     <option disabled selected="selected">Categorias</option>
                                                     <option value="alimentos">Alimentos</option>
                                                     <option value="animais">Animais</option>
@@ -321,16 +321,16 @@
                                                     encaixa?</small>
                                             </div>
 
-                                            <label for="nameInput">Nome da campanha</label>
+                                            <label for="nameInput">Nome da campanha*</label>
                                             <div class="input-group">
-                                                <input type="text" class="form-control" id="nameInput" aria-describedby="basic-addon3">
+                                                <input required type="text" class="form-control" id="nameInput" aria-describedby="basic-addon3">
                                             </div>
                                             <small class="form-text text-muted">O nome da sua campanha</small>
                                             <div class="mb-3"></div>
 
-                                            <label for="descInput">Descrição da campanha</label>
+                                            <label for="descInput">Descrição da campanha*</label>
                                             <div class="input-group">
-                                                    <textarea class="form-control" id="descInput"></textarea>
+                                                    <textarea required class="form-control" id="descInput"></textarea>
                                             </div>
                                             <small class="form-text text-muted">Um breve resumo sobre a sua campanha</small>
                                             <div class="mb-3"></div>
@@ -373,17 +373,20 @@
                                             </div>
                                             <small class="form-text text-muted">O site completo do seu patrocinador</small>
                                             <div class="mb-3"></div>
-
+                                            
+                                            <label for="metaArrecadacao">Meta de arrecadação*</label>
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">R$</span>
                                                 </div>
-                                                <input type="text" class="form-control" aria-label="Meta de arrecadação">
+                                                <input id="metaArrecadacao" required type="text" class="form-control" aria-label="Meta de arrecadação">
                                             </div>
                                             <small class="form-text text-muted">Valor em Reais (BRL).</small>
+                                            
+                                            <div id="msg"></div>
 
                                             <div class="submit-btn-area">
-                                                <button id="form_submit" onClick="null">Criar campanha <i class="ti-arrow-right"></i></button>
+                                                <button id="form_submit" onclick="criarCampanha()">Criar campanha <i class="ti-arrow-right"></i></button>
                                             </div>
 
                                         </div>
@@ -673,6 +676,9 @@
     <!-- others plugins -->
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/scripts.js"></script>
+    <!--Functions-->
+    
+    <script src="../js/new-campaign.js"></script>
     <script>
         $(document).ready(function () {
 
