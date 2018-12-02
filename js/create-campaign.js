@@ -45,7 +45,7 @@ formCadastro.addEventListener("submit", function(event){
     };
 
     console.log(corpoRequest);
-    db.collection('campanhas').doc('' + (new Date()).getTime()).set(corpoRequest);
+    db.collection('campanhas').add(corpoRequest);
 
 });
 

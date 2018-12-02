@@ -143,3 +143,8 @@ function filtrarCampanhasPorTipo(campanhas, tipo) {
     }
     return campanhasFiltradas;
 }
+
+boxCampanha 
+function abrirModal(){
+
+}

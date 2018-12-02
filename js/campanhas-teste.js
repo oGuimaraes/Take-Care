@@ -48,9 +48,15 @@ function removerCampanhasListadas(areaCampanha) {
 }
 
 function criarCardCampanha(areaCampanha, doc) {
+    console.log(doc);
+    console.log(doc.data());
+    console.log(doc.id);
 
     var divCampanha = document.createElement("div");
     divCampanha.setAttribute("class", "box-campanha");
+    divCampanha.setAttribute("data-toggle", "modal");
+    divCampanha.setAttribute("data-target", "#myModal");
+
     divCampanha.setAttribute("id", "box-campanha");
 
     var createImg = document.createElement("img");
@@ -120,6 +126,12 @@ function criarCardCampanha(areaCampanha, doc) {
     imgPatrocinio.setAttribute("src", doc.data().imagem_patrocinio);
     divClicavel.appendChild(imgPatrocinio);
 
+    divCampanha.addEventListener('click', function(){
+        window.location.href = '#/?id=' + doc.id;
+   })
+
     // Adiciona elemento ao DOM
     areaCampanha.appendChild(divCampanha);
+
+
 }
