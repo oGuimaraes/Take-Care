@@ -48,9 +48,6 @@ function removerCampanhasListadas(areaCampanha) {
 }
 
 function criarCardCampanha(areaCampanha, doc) {
-    console.log(doc);
-    console.log(doc.data());
-    console.log(doc.id);
 
     var divCampanha = document.createElement("div");
     divCampanha.setAttribute("class", "box-campanha");
@@ -128,10 +125,15 @@ function criarCardCampanha(areaCampanha, doc) {
 
     divCampanha.addEventListener('click', function(){
         window.location.href = '#/?id=' + doc.id;
+        carregaModal(doc);
    })
 
     // Adiciona elemento ao DOM
     areaCampanha.appendChild(divCampanha);
+}
 
-
+function carregaModal(doc){
+    var data = doc.data();
+    titulo = document.getElementById("modal-title");
+    titulo.innerHTML = data.titulo;
 }
