@@ -142,4 +142,21 @@ function carregaModal(doc){
 
     imagemPatrocinio = document.getElementById("img-patrocinio");
     imagemPatrocinio.src = data.imagem_patrocinio
+
+    totalArrecadado = document.getElementById("total-arrecadado");
+    totalArrecadado.innerHTML = "R$" + data.valor_arrecadado;
+
+    valorTotal = document.getElementById("valor-total");
+    valorTotal.innerHTML = "R$" + data.valor_total;
+
+    barraProgresso = document.getElementById("barra-progresso");
+    barraProgresso.style.width = data.porcentagem_arrecadada + "%";
+    barraProgresso.innerHTML = data.porcentagem_arrecadada + "%";
+
+    /*
+    descricaoCompleta = document.getElementById("descricao-completa");
+    descricaoCompleta.innerHTML = data.descricao_completa;
+    */
+
+
 }

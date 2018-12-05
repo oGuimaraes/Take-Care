@@ -1,4 +1,4 @@
-function criarCampanha(){
+/*function criarCampanha(){
     if (!$('#form-cadastro')[0].checkValidity()) {
         msg("Preencha o formulário corretamente.");
         return;
@@ -8,3 +8,4 @@ function criarCampanha(){
 function msg(msg) {
     $('#msg').html('<div class="alert alert-warning">' + msg + '</div>');
 }
+*/

@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="assets/css/default-css.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet/less" type="text/css" href="../css/campanha.less">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.7.1/less.min.js"></script>
+
     <!-- modernizr css -->
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
@@ -220,7 +223,7 @@
                                     <li class="active">
                                         <a href="javascript:void(0)"><i class="ti-layout-sidebar-left"></i><span>Campanhas</span></a>
                                         <ul class="submenu">
-                                            <li><a href="minhas-campanhas.html#criarcampanha" data-toggle="modal"
+                                            <li><a href="minhas-campanhas.html#criarcampanha" class="title" data-toggle="modal"
                                                     data-target="#criarcampanha">Criar Campanha</a></li>
                                             <li class="active"><a href="minhas-campanhas.html">Minhas campanhas</a></li>
                                             <li><a href="#">Todas as campanhas</a></li>
@@ -293,8 +296,8 @@
                     <!-- Modal -->
                     <div class="modal fade" id="criarcampanha" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                         aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content" id="modal-criar-campanha">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="exampleModalLabel">Criar campanha</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -307,7 +310,7 @@
 
                                             <div class="form-group">
                                                 <label for="selectBox" class="col-form-label">Escolha uma categoria*</label>
-                                                <select id="selectBox" required class="custom-select">
+                                                <select id="tipo-campanha" required class="custom-select">
                                                     <option disabled selected="selected">Categorias</option>
                                                     <option value="alimentos">Alimentos</option>
                                                     <option value="animais">Animais</option>
@@ -323,44 +326,51 @@
 
                                             <label for="nameInput">Nome da campanha*</label>
                                             <div class="input-group">
-                                                <input required type="text" class="form-control" id="nameInput" aria-describedby="basic-addon3">
+                                                <input required type="text" class="form-control" id="nome-campanha" aria-describedby="basic-addon3">
                                             </div>
                                             <small class="form-text text-muted">O nome da sua campanha</small>
                                             <div class="mb-3"></div>
 
-                                            <label for="descInput">Descrição da campanha*</label>
+                                            <label for="descInput">Breve Descrição*</label>
                                             <div class="input-group">
-                                                    <textarea required class="form-control" id="descInput"></textarea>
+                                                    <textarea required class="form-control" id="descricao-pequena"></textarea>
                                             </div>
                                             <small class="form-text text-muted">Um breve resumo sobre a sua campanha</small>
+                                            <div class="mb-3"></div>
+
+                                            <label for="descInput">Descrição Completa*</label>
+                                            <div class="input-group">
+                                                    <textarea required class="form-control" id="descricao-completa"></textarea>
+                                            </div>
+                                            <small class="form-text text-muted">Descreva os interesses de sua campanha</small>
                                             <div class="mb-3"></div>
                                             
                                             <label for="bannerInput">Seu banner</label>
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
-                                                    <span class="input-group-text">Imagem</span>
+                                                    <span class="input-group-text2">Imagem</span>
                                                 </div>
                                                 <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="bannerInput">
+                                                    <input type="file" class="custom-file-input" id="link-imagem">
                                                     <label class="custom-file-label" for="bannerInput">Banner da
                                                         campanha</label>
                                                 </div>
                                             </div>
-                                            <small class="form-text text-muted">Escolha uma imagem para ser o
+                                            <small class="form-text text-muted2">Escolha uma imagem para ser o
                                                     banner da sua campanha.</small>
                                             <div class="mb-3"></div>
 
                                             <label for="logoInput">Logo do patrocinador</label>
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
-                                                    <span class="input-group-text">Imagem</span>
+                                                    <span class="input-group-text2">Imagem</span>
                                                 </div>
                                                 <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="logoInput">
+                                                    <input type="file" class="custom-file-input" id="img-patrocinio">
                                                     <label class="custom-file-label" for="logoInput">Logo do patrocinador</label>
                                                 </div>
                                             </div>
-                                            <small class="form-text text-muted">Envie a logo do seu patrocinador</small>
+                                            <small class="form-text text-muted2">Envie a logo do seu patrocinador</small>
                                             <div class="mb-3"></div>
 
                                             
@@ -381,12 +391,36 @@
                                                 </div>
                                                 <input id="metaArrecadacao" required type="text" class="form-control" aria-label="Meta de arrecadação">
                                             </div>
-                                            <small class="form-text text-muted">Valor em Reais (BRL).</small>
+                                            <small class="form-text text-muted mb-3">Valor em Reais (BRL).</small>
+
+                                            <label for="metaArrecadacao">Valor Arrecadado*</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">R$</span>
+                                                </div>
+                                                <input id="metaArrecadacao" required type="text" class="form-control" aria-label="Meta de arrecadação">
+                                            </div>
+                                            <small class="form-text text-muted mb-3">Valor já arrecado pela campanha em Reais (BRL).</small>
+
+                                            <label for="nameInput">Criador da Campanha*</label>
+                                            <div class="input-group">
+                                                <input required type="text" class="form-control" id="criador-campanha" aria-describedby="basic-addon3">
+                                            </div>
+                                            <small class="form-text text-muted">Nome do responsável da ONG</small>
+                                            <div class="mb-3"></div>
+
+                                            <label for="nameInput">Endereço da ONG*</label>
+                                            <div class="input-group">
+                                                <input required type="text" class="form-control" id="endereco-ong" aria-describedby="basic-addon3">
+                                            </div>
+                                            <small class="form-text text-muted">Endereço da ONG criadora: Cidade, Estado</small>
+                                            <div class="mb-3"></div>
+
                                             
                                             <div id="msg"></div>
 
                                             <div class="submit-btn-area">
-                                                <button id="form_submit" onclick="criarCampanha()">Criar campanha <i class="ti-arrow-right"></i></button>
+                                                <button id="form_submit" type="submit">Criar campanha <i class="ti-arrow-right"></i></button>
                                             </div>
 
                                         </div>
@@ -679,6 +713,7 @@
     <!--Functions-->
     
     <script src="../js/new-campaign.js"></script>
+    <script src="../js/create-campaign.js"></script>
     <script>
         $(document).ready(function () {
 

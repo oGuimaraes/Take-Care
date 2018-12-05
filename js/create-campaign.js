@@ -18,21 +18,30 @@ document.getElementById('img-patrocinio').addEventListener('change', function(e)
 
 formCadastro.addEventListener("submit", function(event){
     event.preventDefault();
-
+    console.log("Submit")
     formularioPreenchido = event.target;
 
     tipoCampanha = document.getElementById('tipo-campanha').value;
     nomeCampanha = document.getElementById('nome-campanha').value;
-    descricaoCampanha = document.getElementById('descricao-campanha').value;
+    descricaoPequena = document.getElementById('descricao-pequena').value;
+    descricaoCompleta = document.getElementById('descricao-completa').value;
     linkPatrocinio = document.getElementById('link-patrocinio').value;
     linkPatrocinio.innerHTML = '#';
     valorTotal  = document.getElementById('total-arrecadar').value;
     valorArrecadado = document.getElementById('valor-arrecadado').value;
     porcentagemArrecadada = document.getElementById('porcentagem-arrecadada').value;
 
+    /* (Falta Testar)
+
+    criadorCampanha = document.getElementById("criador-campanha");
+    enderecoONG = DOCUMENT.getElementById("endereco-ong");
+
+    */
+
     var corpoRequest = {
 
-        descricao: descricaoCampanha,
+        descricao_pequena: descricaoPequena,
+        descricao_completa: descricaoCompleta,
         imagem: imagemBase64,
         imagem_patrocinio: patrocinioImagemBase64,
         link_patrocinio: linkPatrocinio,
@@ -40,7 +49,12 @@ formCadastro.addEventListener("submit", function(event){
         tipo: tipoCampanha,
         titulo: nomeCampanha,
         valor_arrecadado: valorArrecadado,
-        valor_total: valorTotal
+        valor_total: valorTotal,
+
+        /* Falta testar
+        criador_campanha: criadorCampanha,
+        endereco_ong: enderecoONG
+        */
         
     };
 
