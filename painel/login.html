@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Entrar | Take Care   </title>
+    <title>Entrar | Take Care </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="assets/images/icon/favicon.ico">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -37,7 +37,7 @@
     <div class="login-area login-bg">
         <div class="container">
             <div class="login-box ptb--100">
-                <form>
+                <form onsubmit="return false">
                     <div class="login-form-head">
                         <h4>Entrar</h4>
                         <p>Faça login para poder acessar sua conta.</p>
@@ -45,12 +45,12 @@
                     <div class="login-form-body">
                         <div class="form-gp">
                             <label for="exampleInputEmail1">Email</label>
-                            <input type="email" id="exampleInputEmail1">
+                            <input type="email" id="email_value">
                             <i class="ti-email"></i>
                         </div>
                         <div class="form-gp">
                             <label for="exampleInputPassword1">Senha</label>
-                            <input type="password" id="exampleInputPassword1">
+                            <input type="password" id="pass_value">
                             <i class="ti-lock"></i>
                         </div>
                         <div class="row mb-4 rmber-area">
@@ -65,10 +65,10 @@
                             </div>
                         </div>
                         <div class="submit-btn-area">
-                            <button id="form_submit" type="submit">entrar <i class="ti-arrow-right"></i></button>
+                            <button id="form_submit" onclick="Login()" type="submit">entrar <i class="ti-arrow-right"></i></button>
                         </div>
                         <div class="form-footer text-center mt-5">
-                            <p class="text-muted">Não tem uma conta? <a href="register.html">Cadastre-se</a></p>
+                            <p class="text-muted">Não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
                         </div>
                     </div>
                 </form>
@@ -77,6 +77,25 @@
     </div>
     <!-- login area end -->
 
+
+    <!--Firebase initial code / DO NOT PUT ANITHING ABOVE-->
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBPJIjBjhygqrbani2lxiGhXnOp_tiBToE",
+            authDomain: "take-care-puc.firebaseapp.com",
+            databaseURL: "https://take-care-puc.firebaseio.com",
+            projectId: "take-care-puc",
+            storageBucket: "take-care-puc.appspot.com",
+            messagingSenderId: "820863118877"
+        };
+        firebase.initializeApp(config);
+        var db = firebase.firestore();
+    </script>
+
+    <!--SCRIPTS DOWN BELLOW-->
     <!-- jquery latest version -->
     <script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
     <!-- bootstrap 4 js -->
@@ -86,10 +105,29 @@
     <script src="assets/js/metisMenu.min.js"></script>
     <script src="assets/js/jquery.slimscroll.min.js"></script>
     <script src="assets/js/jquery.slicknav.min.js"></script>
-    
+
     <!-- others plugins -->
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/scripts.js"></script>
+    <script>
+        function Login() {
+            //Getting email and password value
+            var email = document.getElementById("email_value").value;
+            var password = document.getElementById("pass_value").value;
+
+            firebase.auth().signInWithEmailAndPassword(email, password).then(function () {
+
+                document.location = "index.html";
+            }).catch(function (error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+
+                window.alert("Error: " + errorMessage);
+                // -------------
+            });
+        }
+    </script>
 </body>
 
 </html>

@@ -52,7 +52,7 @@
                         <div class="clearfix d-md-inline-block d-block">
                             <div class="user-profile m-0">
                                 <img class="avatar user-thumb" src="assets/images/author/avatar.png" alt="avatar">
-                                <h4 class="user-name dropdown-toggle" data-toggle="dropdown">Teste <i class="fa fa-angle-down"></i></h4>
+                                <h4 class="user-name dropdown-toggle" data-toggle="dropdown"><span id="userName"></span> <i class="fa fa-angle-down"></i></h4>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="#">Mensagem</a>
                                     <a class="dropdown-item" href="#">Configurações</a>
@@ -116,7 +116,7 @@
                                                     categoria*</label>
                                                 <select id="tipo-campanha" required class="custom-select">
                                                     <option disabled selected="selected">Categorias</option>
-                                                    <option value="alimentos">Alimentos</option>
+                                                    <option value="alimento">Alimento</option>
                                                     <option value="animais">Animais</option>
                                                     <option value="criancas">Crianças</option>
                                                     <option value="ecologia">Ecologia</option>
@@ -241,7 +241,8 @@
                                             <div id="msg"></div>
 
                                             <div class="submit-btn-area">
-                                                <button id="form_submit" onclick="criarCampanha()">Criar campanha <i class="ti-arrow-right"></i></button>
+                                                <button id="form_submit" onclick="criarCampanha()">Criar campanha <i
+                                                        class="ti-arrow-right"></i></button>
                                             </div>
 
                                         </div>
@@ -254,6 +255,166 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Modal editar -->
+                    <div class="modal fade" id="alterarCamp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content" id="modal-criar-campanha">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Criar campanha</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="form-alterar" action="#" onsubmit="return false">
+                                        <div class="login-form-body">
+
+                                            <div class="form-group">
+                                                <label for="selectBox" class="col-form-label">Escolha uma
+                                                    categoria*</label>
+                                                <select id="tipo-campanhaa" required class="custom-select">
+                                                    <option disabled selected="selected">Categorias</option>
+                                                    <option value="alimento">Alimento</option>
+                                                    <option value="animais">Animais</option>
+                                                    <option value="criancas">Crianças</option>
+                                                    <option value="ecologia">Ecologia</option>
+                                                    <option value="idosos">Idosos</option>
+                                                    <option value="materiais">Materiais</option>
+                                                    <option value="outros">Outros</option>
+                                                </select>
+                                                <small class="form-text text-muted">Em qual categoria sua
+                                                    campanha se
+                                                    encaixa?</small>
+                                            </div>
+
+                                            <label for="nameInputa">Nome da campanha*</label>
+                                            <div class="input-group">
+                                                <input required type="text" class="form-control" id="nameInputa"
+                                                    aria-describedby="basic-addon3">
+                                            </div>
+                                            <small class="form-text text-muted">O nome da sua campanha</small>
+                                            <div class="mb-3"></div>
+
+                                            <label for="descPeqInputa">Breve Descrição*</label>
+                                            <div class="input-group">
+                                                <textarea required class="form-control" id="descPeqInputa"></textarea>
+                                            </div>
+                                            <small class="form-text text-muted">Um breve resumo sobre a sua
+                                                campanha</small>
+                                            <div class="mb-3"></div>
+
+                                            <label for="descCompletaInputa">Descrição Completa*</label>
+                                            <div class="input-group">
+                                                <textarea required class="form-control" id="descCompletaInputa"></textarea>
+                                            </div>
+                                            <small class="form-text text-muted">Descreva os interesses de sua
+                                                campanha</small>
+                                            <div class="mb-3"></div>
+
+                                            <label for="bannerInputa">Seu banner</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text2">Imagem</span>
+                                                </div>
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="bannerInputa">
+                                                    <label class="custom-file-label" for="bannerInputa"> Banner
+                                                        da
+                                                        campanha</label>
+                                                </div>
+                                            </div>
+                                            <small class="form-text text-muted2">Escolha uma imagem para ser o
+                                                banner da sua campanha.</small>
+                                            <div class="mb-3"></div>
+
+                                            <label for="logoInputa">Logo do patrocinador</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text2">Imagem</span>
+                                                </div>
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="logoPatrocinadorInputa">
+                                                    <label class="custom-file-label" for="logoPatrocinadorInputa">Logo
+                                                        do
+                                                        patrocinador</label>
+                                                </div>
+                                            </div>
+                                            <small class="form-text text-muted2">Envie a logo do seu
+                                                patrocinador</small>
+                                            <div class="mb-3"></div>
+
+
+                                            <label for="basic-urla">Site do seu patrocinador</label>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon3">https://</span>
+                                                </div>
+                                                <input type="text" class="form-control" id="basic-urla"
+                                                    aria-describedby="basic-addon3">
+                                            </div>
+                                            <small class="form-text text-muted">O site completo do seu
+                                                patrocinador</small>
+                                            <div class="mb-3"></div>
+
+                                            <label for="metaArrecadacaoa">Meta de arrecadação*</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">R$</span>
+                                                </div>
+                                                <input id="metaArrecadacaoa" required type="text" class="form-control"
+                                                    aria-label="Meta de arrecadação">
+                                            </div>
+                                            <small class="form-text text-muted mb-3">Valor em Reais (BRL).</small>
+
+                                            <label for="arrecadadoa">Valor Arrecadado*</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">R$</span>
+                                                </div>
+                                                <input id="arrecadadoa" required type="text" class="form-control"
+                                                    aria-label="Meta de arrecadação">
+                                            </div>
+                                            <small class="form-text text-muted mb-3">Valor já arrecado pela
+                                                campanha em
+                                                Reais (BRL). Se nada colocar 0.</small>
+
+                                            <label for="nameInputCa">Criador da Campanha*</label>
+                                            <div class="input-group">
+                                                <input required type="text" class="form-control" id="nameInputCa"
+                                                    aria-describedby="basic-addon3">
+                                            </div>
+                                            <small class="form-text text-muted">Nome do responsável da ONG</small>
+                                            <div class="mb-3"></div>
+
+                                            <label for="endereco-onga">Endereço da ONG*</label>
+                                            <div class="input-group">
+                                                <input required type="text" class="form-control" id="endereco-onga"
+                                                    aria-describedby="basic-addon3">
+                                            </div>
+                                            <small class="form-text text-muted">Endereço da ONG criadora:
+                                                Cidade,
+                                                Estado</small>
+                                            <div class="mb-3"></div>
+
+
+                                            <div id="msg"></div>
+
+                                            <div class="submit-btn-area">
+                                                <button id="form_submit" onclick="btnAlterarCampanha()">Editar campanha
+                                                    <i class="ti-arrow-right"></i></button>
+                                            </div>
+
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--FIM Modal editar-->>
                     <div class="col-lg-2 mt-3">
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#criarcampanha">
@@ -267,20 +428,19 @@
                                 <h4 class="header-title">Minhas campanhas</h4>
                                 <div class="single-table">
                                     <div class="table-responsive">
-                                        <table class="table table-hover progress-table text-center">
-                                            <thead class="text-uppercase">
+                                        <table id="grid-campanhas" class="table table-striped table-hover progress-table text-center">
+                                            <thead>
                                                 <tr>
                                                     <th scope="col">ID</th>
                                                     <th scope="col">Campanha</th>
                                                     <th scope="col">Encerramento</th>
                                                     <th scope="col">Progresso</th>
-                                                    <th scope="col">Status</th>
                                                     <th scope="col">Ações</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
+                                            <tbody id="table-contatos">
                                                 <tr>
-                                                    <th scope="row">1</th>
+                                                    <td scope="row">yB1TXttwEk6ZU9ogWw1K</td>
                                                     <td>Campanha estatica</td>
                                                     <td>09 / 12 / 2018</td>
                                                     <td>
@@ -289,10 +449,9 @@
                                                                 aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                                         </div>
                                                     </td>
-                                                    <td><span class="status-p bg-primary">Em andamento</span></td>
                                                     <td>
                                                         <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#edit" class="text-secondary"><i
+                                                            <li class="mr-3"><a onclick="alterarCampanha()" class="text-secondary"><i
                                                                         class="fa fa-edit"></i></a></li>
                                                             <li><a href="#delete" class="text-danger"><i class="ti-trash"></i></a></li>
                                                         </ul>
@@ -318,184 +477,7 @@
         </footer>
         <!-- footer area end-->
     </div>
-    <!-- main wrapper start -->
-    <!-- offset area start -->
-    <div class="offset-area">
-        <div class="offset-close"><i class="ti-close"></i></div>
-        <ul class="nav offset-menu-tab">
-            <li><a class="active" data-toggle="tab" href="#activity">Activity</a></li>
-            <li><a data-toggle="tab" href="#settings">Settings</a></li>
-        </ul>
-        <div class="offset-content tab-content">
-            <div id="activity" class="tab-pane fade in show active">
-                <div class="recent-activity">
-                    <div class="timeline-task">
-                        <div class="icon bg1">
-                            <i class="fa fa-envelope"></i>
-                        </div>
-                        <div class="tm-title">
-                            <h4>Rashed sent you an email</h4>
-                            <span class="time"><i class="ti-time"></i>09:35</span>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse distinctio itaque at.
-                        </p>
-                    </div>
-                    <div class="timeline-task">
-                        <div class="icon bg2">
-                            <i class="fa fa-check"></i>
-                        </div>
-                        <div class="tm-title">
-                            <h4>Added</h4>
-                            <span class="time"><i class="ti-time"></i>7 Minutes Ago</span>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet consectetur.
-                        </p>
-                    </div>
-                    <div class="timeline-task">
-                        <div class="icon bg2">
-                            <i class="fa fa-exclamation-triangle"></i>
-                        </div>
-                        <div class="tm-title">
-                            <h4>You missed you Password!</h4>
-                            <span class="time"><i class="ti-time"></i>09:20 Am</span>
-                        </div>
-                    </div>
-                    <div class="timeline-task">
-                        <div class="icon bg3">
-                            <i class="fa fa-bomb"></i>
-                        </div>
-                        <div class="tm-title">
-                            <h4>Member waiting for you Attention</h4>
-                            <span class="time"><i class="ti-time"></i>09:35</span>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse distinctio itaque at.
-                        </p>
-                    </div>
-                    <div class="timeline-task">
-                        <div class="icon bg3">
-                            <i class="ti-signal"></i>
-                        </div>
-                        <div class="tm-title">
-                            <h4>You Added Kaji Patha few minutes ago</h4>
-                            <span class="time"><i class="ti-time"></i>01 minutes ago</span>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse distinctio itaque at.
-                        </p>
-                    </div>
-                    <div class="timeline-task">
-                        <div class="icon bg1">
-                            <i class="fa fa-envelope"></i>
-                        </div>
-                        <div class="tm-title">
-                            <h4>Ratul Hamba sent you an email</h4>
-                            <span class="time"><i class="ti-time"></i>09:35</span>
-                        </div>
-                        <p>Hello sir , where are you, i am egerly waiting for you.
-                        </p>
-                    </div>
-                    <div class="timeline-task">
-                        <div class="icon bg2">
-                            <i class="fa fa-exclamation-triangle"></i>
-                        </div>
-                        <div class="tm-title">
-                            <h4>Rashed sent you an email</h4>
-                            <span class="time"><i class="ti-time"></i>09:35</span>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse distinctio itaque at.
-                        </p>
-                    </div>
-                    <div class="timeline-task">
-                        <div class="icon bg2">
-                            <i class="fa fa-exclamation-triangle"></i>
-                        </div>
-                        <div class="tm-title">
-                            <h4>Rashed sent you an email</h4>
-                            <span class="time"><i class="ti-time"></i>09:35</span>
-                        </div>
-                    </div>
-                    <div class="timeline-task">
-                        <div class="icon bg3">
-                            <i class="fa fa-bomb"></i>
-                        </div>
-                        <div class="tm-title">
-                            <h4>Rashed sent you an email</h4>
-                            <span class="time"><i class="ti-time"></i>09:35</span>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse distinctio itaque at.
-                        </p>
-                    </div>
-                    <div class="timeline-task">
-                        <div class="icon bg3">
-                            <i class="ti-signal"></i>
-                        </div>
-                        <div class="tm-title">
-                            <h4>Rashed sent you an email</h4>
-                            <span class="time"><i class="ti-time"></i>09:35</span>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse distinctio itaque at.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div id="settings" class="tab-pane fade">
-                <div class="offset-settings">
-                    <h4>General Settings</h4>
-                    <div class="settings-list">
-                        <div class="s-settings">
-                            <div class="s-sw-title">
-                                <h5>Notifications</h5>
-                                <div class="s-swtich">
-                                    <input type="checkbox" id="switch1" />
-                                    <label for="switch1">Toggle</label>
-                                </div>
-                            </div>
-                            <p>Keep it 'On' When you want to get all the notification.</p>
-                        </div>
-                        <div class="s-settings">
-                            <div class="s-sw-title">
-                                <h5>Show recent activity</h5>
-                                <div class="s-swtich">
-                                    <input type="checkbox" id="switch2" />
-                                    <label for="switch2">Toggle</label>
-                                </div>
-                            </div>
-                            <p>The for attribute is necessary to bind our custom checkbox with the input.</p>
-                        </div>
-                        <div class="s-settings">
-                            <div class="s-sw-title">
-                                <h5>Show your emails</h5>
-                                <div class="s-swtich">
-                                    <input type="checkbox" id="switch3" />
-                                    <label for="switch3">Toggle</label>
-                                </div>
-                            </div>
-                            <p>Show email so that easily find you.</p>
-                        </div>
-                        <div class="s-settings">
-                            <div class="s-sw-title">
-                                <h5>Show Task statistics</h5>
-                                <div class="s-swtich">
-                                    <input type="checkbox" id="switch4" />
-                                    <label for="switch4">Toggle</label>
-                                </div>
-                            </div>
-                            <p>The for attribute is necessary to bind our custom checkbox with the input.</p>
-                        </div>
-                        <div class="s-settings">
-                            <div class="s-sw-title">
-                                <h5>Notifications</h5>
-                                <div class="s-swtich">
-                                    <input type="checkbox" id="switch5" />
-                                    <label for="switch5">Toggle</label>
-                                </div>
-                            </div>
-                            <p>Use checkboxes when looking for yes or no answers.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
 
     <!--Firebase initial code / DO NOT PUT ANITHING ABOVE-->
@@ -556,13 +538,78 @@
 
     <script src="../js/new-campaign.js"></script>
     <script>
+        // Firebase user
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                // User is signed in.
+                var userNow = firebase.auth().currentUser;
+
+                if (userNow != null) {
+                    var emailId = userNow.email;
+
+                    $('#userName').text(emailId);
+                }
+
+            } else {
+                // No user is signed in.
+                document.location = "login.html";
+            }
+        });
+        // firebase user end  
+
         $(document).ready(function () {
 
             if (window.location.href.indexOf('#criarcampanha') != -1) {
                 $('#criarcampanha').modal('show');
             }
 
+            init();
+
         });
+
+        var isAlterar = false;
+        function alterarCampanha() {
+            isAlterar = true;
+        }
+
+        function init() {
+            // Preenche o formulário quando o usuario clicar em uma linha da tabela 
+            $("#grid-campanhas").on("click", "tr", function (e) {
+                let id = this.childNodes[1].firstChild.nodeValue;
+                console.log(id);
+
+
+                if (isAlterar) {
+                    console.log('é alterar');
+                    isAlterar = false;
+                    db.collection("campanhas").doc(id).get().then(function (doc) {
+                        if (doc.exists) {
+                            console.log("Document data:", doc.data());
+
+                            $('#alterarCamp').modal("show");
+
+                            $('#tipo-campanhaa').val(doc.data().tipo);
+                            $('#nameInputa').val(doc.data().titulo);
+                            $("#descPeqInputa").val(doc.data().descricao_pequena);
+                            $('#descCompletaInputa').val(doc.data().descricao_completa);
+                            $('#bannerInputa').attr('src', doc.data().imagem);
+                            $('#logoPatrocinadorInputa').attr('src', doc.data().imagem_patrocinio);
+                            $('#basic-urla').val(doc.data().link_patrocinio);
+                            $('#metaArrecadacaoa').val(doc.data().valor_total);
+                            $('#endereco-onga').val(doc.data().endereco_ong);
+                            $("#arrecadadoa").val(doc.data().valor_arrecadado);
+
+                        } else {
+                            // doc.data() will be undefined in this case
+                            console.log("No such document!");
+                        }
+                    }).catch(function (error) {
+                        console.log("Error getting document:", error);
+                    });
+                }
+
+            });
+        }
     </script>
 </body>
 
