@@ -1,3 +1,6 @@
+var userNow = firebase.auth().currentUser;
+var userEmail = userNow.email;
+
 // Transforma as imagens em DataURL
 function DataURL(imagem, callback) {
     var reader = new FileReader();
@@ -68,7 +71,8 @@ function criarCampanha() {
         titulo: nomeCampanha,
         valor_arrecadado: valorArrecadado,
         valor_total: valorTotal,
-        endereco_ong: endereco
+        endereco_ong: endereco,
+        criador: userEmail
     };
 
     // Envia os dados para o firebase
@@ -117,12 +121,13 @@ function btnAlterarCampanha() {
         valor_arrecadado: valorArrecadadoa,
         valor_total: valorTotala,
         endereco_ong: enderecoa
+        criador: userEmail
     };
 
     db.collection("cities").doc("LA").set(campanhaa).then(function () {
-            console.log("Document successfully written!");
-            $('#alterarCamp').modal('toggle');
-        })
+        console.log("Document successfully written!");
+        $('#alterarCamp').modal('toggle');
+    })
         .catch(function (error) {
             console.error("Error writing document: ", error);
             msg("Erro ao tentar escrever o documento! Tente novamente.");
