@@ -136,4 +136,10 @@ function carregaModal(doc){
     var data = doc.data();
     titulo = document.getElementById("modal-title");
     titulo.innerHTML = data.titulo;
+
+    imagem = document.getElementById("img-modal");
+    imagem.src = data.imagem;
+
+    imagemPatrocinio = document.getElementById("img-patrocinio");
+    imagemPatrocinio.src = data.imagem_patrocinio
 }

@@ -10,7 +10,8 @@
     <meta name="keywords" content="">
     <link rel="stylesheet/less" type="text/css" href="css/style.less">
     <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.7.1/less.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
 
     <title>Take Care</title>
 </head>
@@ -47,7 +48,7 @@
     <main>
         <div class="header-campanha">
             <h3>Procure pelas campanhas que mais te agradam</h3>
-            
+
             <!--Filtrar campanhas-->
             <select id="search">
                 <option disabled selected value="todos">Escolha por tipo</option>
@@ -67,29 +68,59 @@
         </div>
     </main>
 
-              <!-- Modal -->
+    <!-- Modal -->
 
     <div id="myModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-      
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 id="modal-title" class="modal-title">Titulo</h4>
+        <div class="modal-dialog modal-lg" id="modal">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 id="modal-title" class="modal-title"></h4>
+                </div>
+                <div>
+                    <div class="modal-body">
+                        <div class="modal-row">
+                            <img id="img-modal" class="img-modal" src="">
+                            <div class="text-content">
+                                <p>Esta é a Esperança. Recebeu esse nome por vários motivos, mas principalmente, porque mesmo fraca, debilitada, desnutrida, com febre, ela não desistiu de lutar pela vida. Esperança foi resgatada em 18/05/2018, na porta da faculdade em que estudo. Lá sempre tem muitos cães, a maioria gordinhos, são cuidados pelos funcionários.</p>
+                                <div class="responsavel">
+                                    <img class="img-responsavel" src="img/icons/responsavel.jpg"><span>&nbsp Mariana Diniz</span>
+                                    <br>
+                                    <img class="img-localizacao" src="img/icons/localização.jpg"> <span class="local">&nbspBelo Horizonte, Minas Gerais</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-row">
+                            <div class="valores">
+                                <span class="title">Total arrecadado:</span>
+                                <div id="porcentagem"><span class="total-arrecadado">R$1500</span>&nbsp de &nbsp<span class="valor-total">R$3000</span></div>
+                                <div class="progresso">
+                                    <div class="barra-progresso">50%</div>
+                                </div>
+                            </div>
+
+                            <div class="patrocinio">
+                                <span>Patrocinado por:</span>
+                                <img id="img-patrocinio">
+                            </div>
+                        </div>
+                        <div class="modal-row">
+                            <img class="social" src="img/icons/social.png">
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">DOAR</button>
+                </div>
             </div>
-            <div class="modal-body">
-              <p>Some text in the modal.</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-      
+
         </div>
     </div>
-        
+
     <footer>
-        
+
     </footer>
 
 </body>
@@ -97,46 +128,50 @@
 <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
 <script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBPJIjBjhygqrbani2lxiGhXnOp_tiBToE",
-    authDomain: "take-care-puc.firebaseapp.com",
-    databaseURL: "https://take-care-puc.firebaseio.com",
-    projectId: "take-care-puc",
-    storageBucket: "take-care-puc.appspot.com",
-    messagingSenderId: "820863118877"
-  };
-  firebase.initializeApp(config);
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyBPJIjBjhygqrbani2lxiGhXnOp_tiBToE",
+        authDomain: "take-care-puc.firebaseapp.com",
+        databaseURL: "https://take-care-puc.firebaseio.com",
+        projectId: "take-care-puc",
+        storageBucket: "take-care-puc.appspot.com",
+        messagingSenderId: "820863118877"
+    };
+    firebase.initializeApp(config);
 </script>
 
 <!--SCRIPTS DOWN BELLOW-->
 
 <script> // Checking if the user is logged.
-firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      // User is signed in.
-        document.getElementById("logged").style.display = "flex";
-        document.getElementById("login").style.display = "none";
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            // User is signed in.
+            document.getElementById("logged").style.display = "flex";
+            document.getElementById("login").style.display = "none";
 
-        var userNow = firebase.auth().currentUser;
+            var userNow = firebase.auth().currentUser;
 
-        if(userNow != null){
-            var emailId = userNow.email;
+            if (userNow != null) {
+                var emailId = userNow.email;
 
-            document.getElementById("user_fullname").innerHTML = emailId;
+                document.getElementById("user_fullname").innerHTML = emailId;
+            }
+
+        } else {
+            // No user is signed in.
+            document.getElementById("logged").style.display = "none";
+            document.getElementById("login").style.display = "flex";
         }
-
-    } else {
-      // No user is signed in.
-        document.getElementById("logged").style.display = "none";
-        document.getElementById("login").style.display = "flex";
-    }
-  });
+    });
 </script>
 <script type="text/javascript" src="js/auth.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <!--<script type="text/javascript" src="db/campanhas.json"></script>-->
-<script type="text/javascript" src="js/campanhas-teste.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/campanhas-teste.js"></script>
