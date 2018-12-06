@@ -1,7 +1,3 @@
+Trabalho Interdisciplinar de Software (1º Periodo - Eng. de Software - PUC Minas)
 
-console.log("Registros: " DB.num_records);
-
-var DB = { "num_records": 2, "results": [{...},{...},{...}]};
-DB.RESULTS[0].nome + " - " + 
-
-Teste de commit
+TakeCare - Unindo doadores a Ongs
