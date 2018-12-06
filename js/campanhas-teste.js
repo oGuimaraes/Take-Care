@@ -102,7 +102,7 @@ function criarCardCampanha(areaCampanha, doc) {
 
     divDescricao = document.createElement("div");
     divDescricao.setAttribute("class", "descricao");
-    divDescricao.innerHTML = doc.data().descricao;
+    divDescricao.innerHTML = doc.data().descricao_pequena;
     divInfo.appendChild(divDescricao);
 
     divAreaPatrocinio = document.createElement("div");
@@ -152,6 +152,9 @@ function carregaModal(doc){
     barraProgresso = document.getElementById("barra-progresso");
     barraProgresso.style.width = data.porcentagem_arrecadada + "%";
     barraProgresso.innerHTML = data.porcentagem_arrecadada + "%";
+
+    descricaoCompleta = document.getElementById("descricao-completa");
+    descricaoCompleta.innerHTML = data.descricao_completa;
 
     /*
     descricaoCompleta = document.getElementById("descricao-completa");

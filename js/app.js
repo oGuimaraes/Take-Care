@@ -102,7 +102,8 @@ function criarCardCampanha(areaCampanha, campanha) {
 
     divDescricao = document.createElement("div");
     divDescricao.setAttribute("class", "descricao");
-    divDescricao.innerHTML = campanha.info.desc_pequena;
+    divDescricao.innerHTML = campanha.info.descricao_pequena;
+    console.log(campanha.info.descricao_pequena);
     divInfo.appendChild(divDescricao);
 
     divAreaPatrocinio = document.createElement("div");
