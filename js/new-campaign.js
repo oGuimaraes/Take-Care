@@ -12,8 +12,6 @@ function DataURL(imagem, callback) {
 // Vars
 var banner;
 var logoPat;
-var bannera;
-var logoPata;
 
 document.getElementById('bannerInput').addEventListener('change', function (e) {
     DataURL(this.files[0], function (data) { banner = data });
@@ -21,14 +19,6 @@ document.getElementById('bannerInput').addEventListener('change', function (e) {
 
 document.getElementById('logoPatrocinadorInput').addEventListener('change', function (e) {
     DataURL(this.files[0], function (data) { logoPat = data })
-});
-
-document.getElementById('bannerInputa').addEventListener('change', function (e) {
-    DataURL(this.files[0], function (data) { bannera = data });
-});
-
-document.getElementById('logoPatrocinadorInputa').addEventListener('change', function (e) {
-    DataURL(this.files[0], function (data) { logoPata = data })
 });
 
 // Cria a campanha em sí
@@ -84,11 +74,12 @@ function criarCampanha() {
 }
 
 function btnAlterarCampanha() {
-    if (!$('#form-cadastro')[0].checkValidity()) {
+    if (!$('#form-alterar')[0].checkValidity()) {
         msg("Preencha o formulário corretamente.");
         return;
     }
 
+    let docId = $("#idcamp");
     // Pega os valores das campanhas
     let tipoCampanhaa = $("#tipo-campanhaa").val();
     let nomeCampanhaa = $("#nameInputa").val();
@@ -112,23 +103,23 @@ function btnAlterarCampanha() {
 
         descricao_pequenaa: descricaoPequenaa,
         descricao_completaa: descricaoCompletaa,
-        imagem: bannera,
-        imagem_patrocinio: logoPata,
+        imagem: banner,
+        imagem_patrocinio: logoPat,
         link_patrocinio: linkPatrocinioa,
         porcentagem_arrecadada: porcentagemArrecadadaa,
         tipo: tipoCampanhaa,
         titulo: nomeCampanhaa,
         valor_arrecadado: valorArrecadadoa,
         valor_total: valorTotala,
-        endereco_ong: enderecoa
+        endereco_ong: enderecoa,
         criador: userEmail
     };
 
-    db.collection("cities").doc("LA").set(campanhaa).then(function () {
+    db.collection("campanhas").doc("" + docId).set(campanhaa).then(function () {
         console.log("Document successfully written!");
         $('#alterarCamp').modal('toggle');
-    })
-        .catch(function (error) {
+        exibeCampanhas();
+    }).catch(function (error) {
             console.error("Error writing document: ", error);
             msg("Erro ao tentar escrever o documento! Tente novamente.");
         });
