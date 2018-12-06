@@ -1,6 +1,5 @@
 var userNow = firebase.auth().currentUser;
 //var userEmail = userNow.email;
-
 // Transforma as imagens em DataURL
 function DataURL(imagem, callback) {
     var reader = new FileReader();
@@ -43,6 +42,8 @@ function criarCampanha() {
     aux = (valorArrecadado * 100) / valorTotal;
 
     let porcentagemArrecadada = (aux.toFixed(1)).toString();
+    console.log(porcentagemArrecadada);
+    console.log(aux);
 
     // ======================
 
