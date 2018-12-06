@@ -1,5 +1,5 @@
 var userNow = firebase.auth().currentUser;
-var userEmail = userNow.email;
+//var userEmail = userNow.email;
 
 // Transforma as imagens em DataURL
 function DataURL(imagem, callback) {
@@ -36,6 +36,7 @@ function criarCampanha() {
     let linkPatrocinio = $("#basic-url").val();
     let valorTotal = $("#metaArrecadacao").val();
     let valorArrecadado = $("#arrecadado").val();
+    let criadorCampanha = $("#criador-campanha").val();
 
     // Calculo da porcentagem
     let aux;
@@ -62,7 +63,7 @@ function criarCampanha() {
         valor_arrecadado: valorArrecadado,
         valor_total: valorTotal,
         endereco_ong: endereco,
-        criador: userEmail
+        criador: criadorCampanha
     };
 
     // Envia os dados para o firebase

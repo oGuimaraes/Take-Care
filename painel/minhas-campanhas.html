@@ -27,7 +27,7 @@
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
-<body class="body-bg" onload="exibeCampanhas()">
+<body class="body-bg">
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -548,7 +548,7 @@
         });
         // firebase user end  
 
-        $(document).ready(function () {
+        /*$(document).ready(function () {
 
             if (window.location.href.indexOf('#criarcampanha') != -1) {
                 $('#criarcampanha').modal('show');
@@ -557,11 +557,11 @@
             init();
 
         });
+        */
 
-
-        function exibeCampanhas() {
+        /*function exibeCampanhas() {
             let userNow = firebase.auth().currentUser;
-            let userEmail = userNow.email;
+            //let userEmail = userNow.email;
             // Remove todas as linhas do corpo da tabela
             $("#table-campanhas").html("");
 
@@ -637,7 +637,7 @@
                 }
 
             });
-        }
+        }*/
     </script>
 </body>
 
