@@ -92,7 +92,7 @@ function btnAlterarCampanha() {
 
     // Calculo da porcentagem
     let aux;
-    aux = (valorArrecadadoa * 100) / valorTotala;
+    aux = ((valorArrecadadoa * 100) / valorTotala).toFixed(1);
 
     let porcentagemArrecadadaa = aux;
 

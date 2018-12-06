@@ -156,6 +156,13 @@ function carregaModal(doc){
     descricaoCompleta = document.getElementById("descricao-completa");
     descricaoCompleta.innerHTML = data.descricao_completa;
 
+    criadorCampanha = document.getElementById("responsavel-campanha");
+    criadorCampanha.innerHTML = " " + data.criador;
+
+    enderecoCampanha = document.getElementById("endereco-campanha");
+    enderecoCampanha.innerHTML = " " + data.endereco_ong;
+
+
     /*
     descricaoCompleta = document.getElementById("descricao-completa");
     descricaoCompleta.innerHTML = data.descricao_completa;
