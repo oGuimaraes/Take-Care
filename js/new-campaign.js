@@ -42,7 +42,7 @@ function criarCampanha() {
     let aux;
     aux = (valorArrecadado * 100) / valorTotal;
 
-    let porcentagemArrecadada = aux;
+    let porcentagemArrecadada = (aux.toFixed(1)).toString();
 
     // ======================
 

@@ -44,20 +44,19 @@
                 <div class="row align-items-center">
                     <div class="col-md-3">
                         <div class="logo">
-                            <a href="index.html"><img src="assets/images/icon/logo2.png" alt="logo"></a>
+                            <a href="index.html"><img  class="img-logo" src="/img/logo.png" alt="logo"></a>
+                            <span class="titulo">Take Care</span>
                         </div>
                     </div>
                     <!-- profile info & task notification -->
                     <div class="col-md-9 clearfix text-right">
-                        <div class="clearfix d-md-inline-block d-block">
+                        <div class="profile clearfix d-md-inline-block d-block">
                             <div class="user-profile m-0">
-                                <img class="avatar user-thumb" src="assets/images/author/avatar.png" alt="avatar">
+                                <img class="avatar user-thumb" src="../img/profile-picture.jpg" alt="avatar">
                                 <h4 class="user-name dropdown-toggle" data-toggle="dropdown"><span id="userName"></span>
                                     <i class="fa fa-angle-down"></i></h4>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Mensagem</a>
-                                    <a class="dropdown-item" href="#">Configurações</a>
-                                    <a class="dropdown-item" href="#" onClick="Logout()">Sair</a>
+                                    <a class="dropdown-item" href="/user-page.html" onClick="Logout()">Sair</a>
                                 </div>
                             </div>
                         </div>
@@ -413,10 +412,10 @@
                             </div>
                         </div>
                     </div>
-                    <!--FIM Modal editar-->>
+                    <!--FIM Modal editar-->
                     <div class="col-lg-2 mt-3">
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#criarcampanha">
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#criarcampanha">
                             Criar Campanha
                         </button>
                     </div>
